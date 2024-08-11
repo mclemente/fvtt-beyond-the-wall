@@ -1,0 +1,67 @@
+{
+	"id": "beyond-the-wall",
+	"title": "Beyond The Wall",
+	"description": "",
+	"authors": [
+		{
+			"name": "Matheus Clemente",
+			"discord": "mclemente"
+		}
+	],
+	"esmodules": ["module/beyond-the-wall.js"],
+	"styles": ["styles/beyond-the-wall.css"],
+	"languages": [
+		{
+			"lang": "en",
+			"path": "lang/en.json"
+		},
+		{
+			"lang": "pt-BR",
+			"path": "lang/pt-BR.json"
+		}
+	],
+	"compatibility": {
+		"minimum": 12,
+		"verified": 12,
+		"maximum": 12
+	},
+	"grid": {
+		"distance": 1,
+		"units": "u"
+	},
+	"documentTypes": {
+		"Actor": {
+			"character": {
+				"htmlFields": ["notes"]
+			},
+			"npc": {
+				"htmlFields": ["notes"]
+			}
+		},
+		"Item": {
+			"armor": {
+				"htmlFields": ["description"]
+			},
+			"class": {
+				"htmlFields": ["abilities", "description"]
+			},
+			"equipment": {
+				"htmlFields": ["description"]
+			},
+			"skill": {
+				"htmlFields": ["description"]
+			},
+			"trait": {
+				"htmlFields": ["description"]
+			},
+			"weapon": {
+				"htmlFields": ["description"]
+			}
+		}
+	},
+	"initiative": "@initiative",
+	"url": "This is auto replaced",
+	"version": "This is auto replaced",
+	"manifest": "This is auto replaced",
+	"download": "This is auto replaced"
+}

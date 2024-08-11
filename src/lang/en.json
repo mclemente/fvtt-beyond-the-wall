@@ -1,0 +1,54 @@
+{
+	"TYPES": {
+		"Actor": {
+			"character": "Character",
+			"npc": "NPC"
+		}
+	},
+	"BTW": {
+		"Ability": {
+			"Str": {
+				"Label": "Strength",
+				"Features": "melee to hit, melee damage"
+			},
+			"Dex": {
+				"Label": "Dexterity",
+				"Features": "ranged to hit, armor class, initiative"
+			},
+			"Con": {
+				"Label": "Constitution",
+				"Features": "hit points per level"
+			},
+			"Int": {
+				"Label": "Intelligence",
+				"Features": "languages known"
+			},
+			"Wis": {
+				"Label": "Wisdom",
+				"Features": "save vs mind control"
+			},
+			"Cha": {
+				"Label": "Charisma",
+				"Features": "max # of allies"
+			}
+		},
+		"Modifier": "Modifier",
+		"Save": {
+			"Poison": {
+				"Label": "Poison"
+			},
+			"Breath": {
+				"Label": "Breath Weapon"
+			},
+			"Polymorph": {
+				"Label": "Polymorph"
+			},
+			"Spell": {
+				"Label": "Spell"
+			},
+			"MagicItem": {
+				"Label": "Magic Item"
+			}
+		}
+	}
+}

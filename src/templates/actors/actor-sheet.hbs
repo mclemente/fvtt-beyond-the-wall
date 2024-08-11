@@ -1,0 +1,84 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+	{{> "btw.actor-header" }}
+
+	<nav class="sheet-tabs tabs flexrow" data-group="primary">
+		<a class="item" data-tab="features">Features</a>
+		<a class="item" data-tab="items">Items</a>
+		<a class="item" data-tab="notes">Notes</a>
+		{{!-- <a class="item" data-tab="effects">Efeitos</a> --}}
+	</nav>
+
+	<section class="sheet-body flexrow">
+		<div class="tab features flexrow" data-group="primary" data-tab="features">
+			<div class="left-side">
+				<div class="abilities flexcol">
+					{{#each abilities as | ability id | }}
+					<div class="flexrow">
+						<div class="ability flexcol">
+							<label>{{ability.label}}</label>
+							<input type="number" name="system.abilities.{{id}}.value" value="{{ability.value}}" min="1" class="ability-score" placeholder="10" data-dtype="Number">
+						</div>
+						<div class="ability-modifiers flexrow">
+							<span class="ability-mod" data-tooltip="BTW.Modifier">
+								{{numberFormat ability.mod decimals=0 sign=true}}
+							</span>
+						</div>
+						<div class="ability-features flexcol">
+							{{#each ability.features}}
+							<span>{{this}}</span>
+							{{/each}}
+						</div>
+					</div>
+					{{/each}}
+				</div>
+				<hr>
+				<div class="saves flexrow">
+					{{#each saves as | save id |}}
+					<div class="save flexcol">
+						<label>{{save.label}}</label>
+						<div class="save-wrapper">
+							<input type="number" name="system.saves.{{id}}.value" value="{{save.value}}" placeholder="20" data-dtype="Number">
+						</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+
+			<div class="spacer flexrow"></div>
+
+			<div class="right-side">
+				<div class="right-fields flexrow">
+					<div class="flexcol">
+						<input type="number" name="system.ac" value="{{system.ac}}" placeholder="10" data-dtype="Number" />
+						<label>Armor Class</label>
+					</div>
+					{{#if (eq actor.type "character")}}
+					<div class="flexcol">
+						<input type="number" name="system.fortunePoints.value" value="{{system.fortunePoints.value}}"
+							data-dtype="Number" min="0" max="{{system.fortunePoints.max}}" />
+						<label>Fortune Points</label>
+					</div>
+					{{/if}}
+					<div class="flexcol">
+						<div class="hp flexrow">
+							<input type="number" name="system.hp.value" value="{{system.hp.value}}" data-dtype="Number" />
+							<input type="number" name="system.hp.max" value="{{system.hp.max}}" data-dtype="Number" />
+						</div>
+						<label>Hit Points</label>
+					</div>
+				</div>
+				<hr>
+			</div>
+		</div>
+
+		<div class="tab items" data-group="primary" data-tab="items">
+
+		</div>
+
+		<div class="tab notes flexcol" data-group="primary" data-tab="notes">
+			{{editor descriptionHTML target="system.notes" button=true editable=editable
+					engine="prosemirror" collaborate=false}}
+		</div>
+
+	</section>
+</form>

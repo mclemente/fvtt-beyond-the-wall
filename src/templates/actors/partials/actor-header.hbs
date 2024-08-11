@@ -1,0 +1,35 @@
+<header class="sheet-header flexrow">
+	<div class="portrait">
+		<img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+	</div>
+	<div class="header-fields">
+		<input name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
+		<div class="class flexrow">
+			{{#if (eq actor.type "character")}}
+			<div class="form-group class">
+				<input name="system.class" type="text" value="{{system.class}}" placeholder="Class" />
+			</div>
+			<div class="form-group level">
+				<input name="system.level" type="number" value="{{system.level}}" />
+			</div>
+			{{/if}}
+		</div>
+		<div class="form-group experience">
+			<label>Experience</label>
+			<div class="form-fields">
+				<input name="system.xp.value" type="number" value="{{system.xp.value}}" />
+				{{#if (eq actor.type "character")}}
+				<input name="system.xp.max" type="number" value="{{system.xp.max}}" />
+				{{/if}}
+			</div>
+		</div>
+		<div class="form-group">
+			<label>Base Attack Bonus</label>
+			<input name="system.bab" type="number" value="{{system.bab}}" />
+		</div>
+		<div class="form-group">
+			<label>Initiative</label>
+			<input name="system.initiative" type="number" value="{{system.initiative}}" />
+		</div>
+	</div>
+</header>

@@ -14,7 +14,11 @@
 		</div>
 		<div class="form-group">
 			<label>Alignment</label>
-			<input name="system.alignment" type="text" value="{{system.alignment}}" />
+			<div class="form-fields">
+				<select name="system.alignment">
+					{{selectOptions config.alignments selected=system.alignment }}
+				</select>
+			</div>
 		</div>
 		<div class="form-group experience">
 			<label>Experience</label>

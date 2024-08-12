@@ -40,6 +40,17 @@
 				"Features": "max # of allies"
 			}
 		},
+		"Alignments": {
+			"Law": {
+				"Label": "Lawful"
+			},
+			"Chaos": {
+				"Label": "Chaotic"
+			},
+			"Neutral": {
+				"Label": "Neutral"
+			}
+		},
 		"Modifier": "Modifier",
 		"Save": {
 			"Poison": {

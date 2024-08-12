@@ -17,7 +17,7 @@ export default class ActorTemplateData extends foundry.abstract.TypeDataModel {
 				initialKeysOnly: true
 			}),
 			ac: new fields.NumberField({ initial: 10, integer: true }),
-			alignment: new fields.StringField({ initial: "neutrality" }),
+			alignment: new fields.StringField({ initial: "neutral", choices: CONFIG.BTW.alignments }),
 			bab: new fields.NumberField({ nullable: false, integer: true, initial: 0 }),
 			hd: new FormulaField({ initial: "0" }),
 			hp: new fields.SchemaField({

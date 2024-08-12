@@ -22,7 +22,9 @@ export default class ActorSheetBTW extends ActorSheet {
 			system: foundry.utils.duplicate(this.actor.system),
 			items: Array.from(this.actor.items.toObject()).sort((a, b) => (a.sort || 0) - (b.sort || 0)),
 			abilities: foundry.utils.deepClone(this.actor.system.abilities),
-			saves: foundry.utils.deepClone(this.actor.system.saves)
+			saves: foundry.utils.deepClone(this.actor.system.saves),
+
+			config: CONFIG.BTW
 		};
 
 		for (const [a, abl] of Object.entries(context.abilities)) {

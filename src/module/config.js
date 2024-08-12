@@ -37,6 +37,20 @@ BTW.abilities = {
 
 preLocalize("abilities", { keys: ["label", "abbreviation", "features"] });
 
+BTW.alignments = {
+	law: {
+		label: "BTW.Alignments.Law.Label"
+	},
+	chaos: {
+		label: "BTW.Alignments.Chaos.Label"
+	},
+	neutral: {
+		label: "BTW.Alignments.Neutral.Label"
+	}
+};
+
+preLocalize("alignments", { keys: ["label"] });
+
 BTW.saves = {
 	poison: {
 		label: "BTW.Save.Poison.Label"

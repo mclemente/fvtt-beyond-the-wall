@@ -1,7 +1,7 @@
 .btw {
 	&.sheet {
 		&.actor {
-			min-height: 700px;
+			min-height: 735px;
 			min-width: 600px;
 		}
 		.window-content {
@@ -20,8 +20,8 @@
 		}
 		.portrait {
 			flex: 0 0 auto;
-			height: 160px;
-			width: 160px;
+			height: 200px;
+			width: 200px;
 			text-align: center;
 			border: 1px solid var(--color-border-dark);
 
@@ -138,7 +138,6 @@
 
 				label {
 					text-align: center;
-					word-spacing: 40px;
 				}
 
 				input {

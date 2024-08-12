@@ -3,7 +3,7 @@ export default class ActorSheetBTW extends ActorSheet {
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			classes: ["btw", "sheet", "actor"],
 			width: 600,
-			height: 700,
+			height: 735,
 			scrollY: [".window-content"],
 			tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "moves" }]
 			// dragDrop: [{ dragSelector: ".items-list .item" }]

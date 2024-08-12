@@ -11,7 +11,7 @@ export default class ItemSheetBTW extends ItemSheet {
 	}
 
 	get template() {
-		return "systems/beyond-the-wall/templates/items/item-sheet.hbs";
+		return `systems/beyond-the-wall/templates/items/${this.item.type}-sheet.hbs`;
 	}
 
 	async getData() {
@@ -21,6 +21,8 @@ export default class ItemSheetBTW extends ItemSheet {
 			item: this.item,
 			source: source.system,
 			system: foundry.utils.duplicate(this.item.system),
+
+			config: CONFIG.BTW
 		};
 
 		const enrichmentOptions = {

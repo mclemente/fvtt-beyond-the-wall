@@ -23,6 +23,7 @@ Hooks.once("init", function () {
 	CONFIG.Actor.dataModels.npc = dataModels.NpcData;
 
 	CONFIG.Item.dataModels.class = dataModels.ClassData;
+	CONFIG.Item.dataModels.skill = dataModels.SkillData;
 
 	CONFIG.Actor.documentClass = documents.ActorBTW;
 

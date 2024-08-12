@@ -1,7 +1,9 @@
 export const preloadTemplates = async function () {
 	const templatePaths = [
 		"systems/beyond-the-wall/templates/actors/actor-sheet.hbs",
-		"systems/beyond-the-wall/templates/actors/partials/actor-header.hbs"
+		"systems/beyond-the-wall/templates/actors/partials/actor-header.hbs",
+
+		"systems/beyond-the-wall/templates/items/partials/item-header.hbs"
 	];
 
 	const paths = {};

@@ -2,7 +2,7 @@ export default class ItemSheetBTW extends ItemSheet {
 	static get defaultOptions() {
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			classes: ["btw", "sheet", "item"],
-			width: 450,
+			width: 600,
 			height: 450,
 			// scrollY: [".window-content"],
 			// tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "moves" }]

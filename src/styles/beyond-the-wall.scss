@@ -50,99 +50,8 @@
 			max-width: 32px;
 			text-align: center;
 		}
-		.left-side {
-			.abilities {
-				>div.flexrow {
-					gap: 2px;
-					align-items: center;
-				}
-				label,
-				.ability-score,
-				.ability-mod {
-					font-size: var(--font-size-20);
-				}
-				.ability {
-					&.flexcol {
-						align-items: center;
-					}
-					input.ability-score {
-						flex: 0 0 auto;
-					}
-				}
-				.ability-modifiers {
-					flex: 0 0 auto;
-
-				}
-				.ability-features {
-					text-align: right;
-					align-self: center;
-				}
-			}
-			.saves {
-				height: 120px;
-				.save.flexcol {
-					text-align: center;
-					align-items: center;
-
-					label {
-						flex: 0;
-						min-height: 34px;
-						align-content: center;
-					}
-
-					&:nth-child(odd) {
-						margin-bottom: auto;
-					}
-					&:nth-child(even) {
-						margin-top: auto;
-					}
-				}
-				.save-wrapper {
-					flex: 0 0 auto;
-					border: 1px solid var(--color-border-light-tertiary);
-					border-radius: 20px;
-					padding: 1px 0;
-					input {
-						border-radius: 20px;
-						height: 32px;
-					}
-				}
-			}
-		}
-		.spacer.flexrow {
-			flex: 0;
-			&:before {
-				content: "";
-				border-left: 1px solid var(--color-border-light-primary);
-  				border-right: 1px solid var(--color-border-light-highlight);
-				align-self: stretch;
-			}
-		}
-		.right-side {
-			.right-fields {
-				align-items: center;
-				margin: 3px 0;
-
-				label {
-					text-align: center;
-				}
-
-				input {
-					font-size: var(--font-size-20);
-				}
-
-				> div.flexcol {
-					align-items: center;
-				}
-
-				.hp {
-					gap: 3px;
-				}
-			}
-		}
-
 		.editor {
-			min-height: 300px;
+			min-height: 200px;
 		}
 	}
 
@@ -154,6 +63,104 @@
 			.portrait {
 				height: 200px;
 				width: 200px;
+			}
+			.left-side {
+				.abilities {
+					>div.flexrow {
+						gap: 2px;
+						align-items: center;
+					}
+					label,
+					.ability-score,
+					.ability-mod {
+						font-size: var(--font-size-20);
+					}
+					.ability {
+						&.flexcol {
+							align-items: center;
+						}
+						input.ability-score {
+							flex: 0 0 auto;
+						}
+					}
+					.ability-modifiers {
+						flex: 0 0 auto;
+
+					}
+					.ability-features {
+						text-align: right;
+						align-self: center;
+					}
+				}
+				.saves {
+					height: 120px;
+					.save.flexcol {
+						text-align: center;
+						align-items: center;
+
+						label {
+							flex: 0;
+							min-height: 34px;
+							align-content: center;
+						}
+
+						&:nth-child(odd) {
+							margin-bottom: auto;
+						}
+						&:nth-child(even) {
+							margin-top: auto;
+						}
+					}
+					.save-wrapper {
+						flex: 0 0 auto;
+						border: 1px solid var(--color-border-light-tertiary);
+						border-radius: 20px;
+						padding: 1px 0;
+						input {
+							border-radius: 20px;
+							height: 32px;
+						}
+					}
+				}
+			}
+			.spacer.flexrow {
+				flex: 0;
+				&:before {
+					content: "";
+					border-left: 1px solid var(--color-border-light-primary);
+					  border-right: 1px solid var(--color-border-light-highlight);
+					align-self: stretch;
+				}
+			}
+			.right-side {
+				.right-fields {
+					align-items: center;
+					margin: 3px 0;
+
+					label {
+						text-align: center;
+					}
+
+					input {
+						font-size: var(--font-size-20);
+					}
+
+					> div.flexcol {
+						align-items: center;
+					}
+
+					.hp {
+						gap: 3px;
+					}
+				}
+			}
+		}
+		&.item {
+			min-height: 350px;
+			min-width: 400px;
+
+			.details {
+				flex: 0 1 32%;
 			}
 		}
 		.window-content {

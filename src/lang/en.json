@@ -3,6 +3,14 @@
 		"Actor": {
 			"character": "Character",
 			"npc": "NPC"
+		},
+		"Item": {
+			"armor": "Armor",
+			"class": "Class",
+			"equipment": "Equipment",
+			"skill": "Skill",
+			"trait": "Trait",
+			"weapon": "Weapon"
 		}
 	},
 	"BTW": {

@@ -14,8 +14,7 @@ export default class CharacterData extends ActorTemplateData {
 				max: new fields.NumberField({
 					required: true, nullable: false, integer: true, min: 0, initial: 3
 				})
-			}),
-			level: new fields.NumberField({ nullable: false, integer: true, min: 0, initial: 0 })
+			})
 		};
 	}
 }

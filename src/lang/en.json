@@ -48,6 +48,15 @@
 			},
 			"MagicItem": {
 				"Label": "Magic Item"
+			},
+			"Fortitude": {
+				"Label": "Fortitude"
+			},
+			"Reflex": {
+				"Label": "Reflex"
+			},
+			"Will": {
+				"Label": "Will"
 			}
 		}
 	}

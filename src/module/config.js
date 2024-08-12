@@ -52,6 +52,15 @@ BTW.saves = {
 	},
 	polymorph: {
 		label: "BTW.Save.Polymorph.Label"
+	},
+	fortitude: {
+		label: "BTW.Save.Fortitude.Label"
+	},
+	reflex: {
+		label: "BTW.Save.Reflex.Label"
+	},
+	will: {
+		label: "BTW.Save.Will.Label"
 	}
 };
 

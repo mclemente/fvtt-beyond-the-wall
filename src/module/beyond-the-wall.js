@@ -38,6 +38,18 @@ Hooks.once("init", function () {
 
 	registerSettings();
 
+	if (game.settings.get("beyond-the-wall", "simplified-saves")) {
+		delete CONFIG.BTW.saves.poison;
+		delete CONFIG.BTW.saves.spell;
+		delete CONFIG.BTW.saves.breath;
+		delete CONFIG.BTW.saves.magicItem;
+		delete CONFIG.BTW.saves.polymorph;
+	} else {
+		delete CONFIG.BTW.saves.fortitude;
+		delete CONFIG.BTW.saves.reflex;
+		delete CONFIG.BTW.saves.will;
+	}
+
 	utils.preloadTemplates();
 });
 

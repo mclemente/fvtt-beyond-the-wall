@@ -16,26 +16,32 @@
 	"BTW": {
 		"Ability": {
 			"Str": {
+				"Abbr": "Str",
 				"Label": "Strength",
 				"Features": "melee to hit, melee damage"
 			},
 			"Dex": {
+				"Abbr": "Dex",
 				"Label": "Dexterity",
 				"Features": "ranged to hit, armor class, initiative"
 			},
 			"Con": {
+				"Abbr": "Con",
 				"Label": "Constitution",
 				"Features": "hit points per level"
 			},
 			"Int": {
+				"Abbr": "Int",
 				"Label": "Intelligence",
 				"Features": "languages known"
 			},
 			"Wis": {
+				"Abbr": "Wis",
 				"Label": "Wisdom",
 				"Features": "save vs mind control"
 			},
 			"Cha": {
+				"Abbr": "Cha",
 				"Label": "Charisma",
 				"Features": "max # of allies"
 			}

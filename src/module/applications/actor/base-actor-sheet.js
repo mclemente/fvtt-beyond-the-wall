@@ -42,6 +42,49 @@ export default class ActorSheetBTW extends ActorSheet {
 			rollData: context.actor.getRollData()
 		});
 
+		this._prepareItems(context);
+
 		return context;
+	}
+
+	_prepareItems(context) {
+		context.skills = [];
+		this.actor.items.forEach((i) => {
+			if (i.type === "skill") {
+				i.abl = CONFIG.BTW.abilities[i.system.ability]?.abbreviation;
+				context.skills.push(i);
+			}
+		});
+	}
+
+	activateListeners(html) {
+		super.activateListeners(html);
+
+		if (!this.isEditable) return;
+
+		html.find(".item-create").on("click", (ev) => {
+			ev.preventDefault();
+			const header = ev.currentTarget;
+			const type = header.dataset.type;
+
+			const itemData = {
+				name: CONFIG.Item.documentClass.defaultName({ type, parent: this.actor }),
+				type: type
+			};
+			this.actor.createEmbeddedDocuments("Item", [itemData], { renderSheet: true });
+		});
+
+		html.find(".item-edit").click((ev) => {
+			const li = ev.currentTarget.closest(".item");
+			const item = this.actor.items.get(li.dataset.itemId);
+			item.sheet.render(true);
+		});
+
+		// Delete Inventory Item
+		html.find(".item-delete").click((ev) => {
+			const li = ev.currentTarget.closest(".item");
+			this.actor.deleteEmbeddedDocuments("Item", [li.dataset.itemId]);
+			this.render(false);
+		});
 	}
 }

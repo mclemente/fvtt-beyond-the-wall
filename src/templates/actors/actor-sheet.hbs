@@ -68,6 +68,27 @@
 					</div>
 				</div>
 				<hr>
+				<div class="skills">
+					<div class="item-titles flexrow">
+						<div class="item-name">Skills</div>
+						<div class="item-controls">
+							<a class="item-control item-create" data-type="skill"><i class="fa fa-plus"></i></a>
+						</div>
+					</div>
+					{{#each skills as | skill |}}
+					<div class="item flexrow" data-item-id="{{skill.id}}">
+						<div class="item-name item-rollable">
+							<a class="skill-roll"  data-tooltip="{{skill.system.description~}}">
+								{{skill.name}} ({{#if skill.abl}}{{skill.abl}} {{/if}}{{numberFormat skill.system.bonus decimals=0 sign=true}})
+							</a>
+						</div>
+						<div class="item-controls">
+							<a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+							<a class="item-control item-delete" title="Delete"><i class="fas fa-trash"></i></a>
+						</div>
+					</div>
+					{{/each}}
+				</div>
 			</div>
 		</div>
 

@@ -1,17 +1,4 @@
 .btw {
-	&.sheet {
-		&.actor {
-			min-height: 735px;
-			min-width: 600px;
-		}
-		.window-content {
-			overflow-y: hidden;
-			form {
-				height: 100%;
-				overflow: hidden;
-			}
-		}
-	}
 	.sheet-header {
 		flex: 0 0 auto;
 		&.flexrow {
@@ -20,8 +7,8 @@
 		}
 		.portrait {
 			flex: 0 0 auto;
-			height: 200px;
-			width: 200px;
+			height: 100px;
+			width: 100px;
 			text-align: center;
 			border: 1px solid var(--color-border-dark);
 
@@ -156,6 +143,25 @@
 
 		.editor {
 			min-height: 300px;
+		}
+	}
+
+	&.sheet {
+		&.actor {
+			min-height: 735px;
+			min-width: 600px;
+
+			.portrait {
+				height: 200px;
+				width: 200px;
+			}
+		}
+		.window-content {
+			overflow-y: hidden;
+			form {
+				height: 100%;
+				overflow: hidden;
+			}
 		}
 	}
 }

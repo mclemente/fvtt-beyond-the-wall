@@ -6,7 +6,7 @@ export default class CharacterData extends ActorTemplateData {
 		const superFields = super.defineSchema();
 		return {
 			...superFields,
-			background: new fields.HTMLField({ initial: "" }),
+			background: new fields.HTMLField(),
 			fortunePoints: new fields.SchemaField({
 				value: new fields.NumberField({
 					required: true, nullable: false, integer: true, min: 0, initial: 3

@@ -1,8 +1,7 @@
+import * as applications from "./applications/_module.js";
 import * as dataModels from "./data/_module.js";
 import * as documents from "./documents/_module.js";
 import * as utils from "./utils.js";
-
-import ActorSheetBTW from "./applications/actor/base-actor-sheet.js";
 
 import BTW from "./config.js";
 
@@ -23,10 +22,17 @@ Hooks.once("init", function () {
 	CONFIG.Actor.dataModels.character = dataModels.CharacterData;
 	CONFIG.Actor.dataModels.npc = dataModels.NpcData;
 
+	CONFIG.Item.dataModels.class = dataModels.ClassData;
+
 	CONFIG.Actor.documentClass = documents.ActorBTW;
 
 	Actors.unregisterSheet("core", ActorSheet);
-	Actors.registerSheet("beyond-the-wall", ActorSheetBTW, {
+	Actors.registerSheet("beyond-the-wall", applications.ActorSheetBTW, {
+		makeDefault: true
+	});
+
+	Items.unregisterSheet("core", ItemSheet);
+	Items.registerSheet("beyond-the-wall", applications.ItemSheetBTW, {
 		makeDefault: true
 	});
 

@@ -24,6 +24,7 @@ Hooks.once("init", function () {
 
 	CONFIG.Item.dataModels.class = dataModels.ClassData;
 	CONFIG.Item.dataModels.skill = dataModels.SkillData;
+	CONFIG.Item.dataModels.spell = dataModels.SpellData;
 
 	CONFIG.Actor.documentClass = documents.ActorBTW;
 
@@ -51,6 +52,7 @@ Hooks.once("init", function () {
 		delete CONFIG.BTW.saves.will;
 	}
 
+	utils.registerHandlebarsHelpers();
 	utils.preloadTemplates();
 });
 

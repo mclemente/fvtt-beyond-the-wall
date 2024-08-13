@@ -34,6 +34,24 @@ export function sortObjectEntries(obj, sortKey) {
 	return Object.fromEntries(sorted);
 }
 
+export function registerHandlebarsHelpers() {
+	Handlebars.registerHelper({
+		"btw-formatDuration": (duration) => {
+			let str = "";
+			const { level, units, value } = duration;
+			if (units) {
+				if (units in CONFIG.BTW.scalarTimePeriods) {
+					str = `${value} ${CONFIG.BTW.scalarTimePeriods[units]}`;
+					if (level) str += "/Level";
+				} else if (units in CONFIG.BTW.permanentTimePeriods) {
+					str = CONFIG.BTW.permanentTimePeriods[units];
+				} else return CONFIG.BTW.specialTimePeriods[units];
+			}
+			return str;
+		},
+	});
+}
+
 /* -------------------------------------------- */
 /*  Config Pre-Localization                     */
 /* -------------------------------------------- */

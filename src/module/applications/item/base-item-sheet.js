@@ -4,9 +4,8 @@ export default class ItemSheetBTW extends ItemSheet {
 			classes: ["btw", "sheet", "item"],
 			width: 600,
 			height: 450,
-			// scrollY: [".window-content"],
-			// tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "moves" }]
-			// dragDrop: [{ dragSelector: ".items-list .item" }]
+			scrollY: [".window-content"],
+			tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "moves" }]
 		});
 	}
 
@@ -22,7 +21,7 @@ export default class ItemSheetBTW extends ItemSheet {
 			source: source.system,
 			system: foundry.utils.duplicate(this.item.system),
 
-			config: CONFIG.BTW
+			config: CONFIG.BTW,
 		};
 
 		const enrichmentOptions = {
@@ -37,6 +36,10 @@ export default class ItemSheetBTW extends ItemSheet {
 		if (source.system.abilities) {
 			context.abilitiesHTML = await TextEditor.enrichHTML(source.system.description, enrichmentOptions);
 		}
+
+		context.abilitiesLabels = Object.fromEntries(
+			Object.entries(CONFIG.BTW.abilities).map(([k, v]) => [k, v.label])
+		);
 
 		return context;
 	}

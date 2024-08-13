@@ -159,8 +159,14 @@
 			min-height: 350px;
 			min-width: 400px;
 
-			.details {
+			.details-sidebar {
 				flex: 0 1 32%;
+				border-right: 1px solid var(--color-border-light-primary);
+				padding-right: 2px;
+			}
+
+			.perLevel {
+				flex: 0 0 auto;
 			}
 		}
 		.window-content {

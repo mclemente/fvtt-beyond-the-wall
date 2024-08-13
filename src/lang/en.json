@@ -9,6 +9,7 @@
 			"class": "Class",
 			"equipment": "Equipment",
 			"skill": "Skill",
+			"spell": "Spell",
 			"trait": "Trait",
 			"weapon": "Weapon"
 		}
@@ -57,7 +58,10 @@
 				"Label": "Neutral"
 			}
 		},
+		"DurationPermanent": "Permanent",
+		"DurationTime": "Time",
 		"Modifier": "Modifier",
+		"None": "None",
 		"Save": {
 			"Poison": {
 				"Label": "Poison"
@@ -83,6 +87,16 @@
 			"Will": {
 				"Label": "Will"
 			}
-		}
+		},
+		"TimeTurn": "Turn",
+		"TimeRound": "Round",
+		"TimeMinute": "Minute",
+		"TimeHour": "Hour",
+		"TimeDay": "Day",
+		"TimeMonth": "Month",
+		"TimeYear": "Year",
+		"TimeConcentration": "Concentration",
+		"TimePerm": "Permanent",
+		"TimeInst": "Instant"
 	}
 }

@@ -80,4 +80,36 @@ BTW.saves = {
 
 preLocalize("saves", { keys: ["label"] });
 
+BTW.ranges = {
+	self: "Self",
+	touch: "Touch",
+	near: "Near",
+	far: "Far",
+	cosmos: "the Cosmos"
+};
+
+BTW.scalarTimePeriods = {
+	turn: "BTW.TimeTurn",
+	round: "BTW.TimeRound",
+	minute: "BTW.TimeMinute",
+	hour: "BTW.TimeHour",
+	day: "BTW.TimeDay",
+	month: "BTW.TimeMonth",
+	year: "BTW.TimeYear"
+};
+
+preLocalize("scalarTimePeriods");
+
+BTW.permanentTimePeriods = {
+	conc: "BTW.TimeConcentration",
+	perm: "BTW.TimePerm"
+};
+preLocalize("permanentTimePeriods");
+
+BTW.specialTimePeriods = {
+	inst: "BTW.TimeInst"
+	// spec: "BTW.Special"
+};
+preLocalize("specialTimePeriods");
+
 export default BTW;

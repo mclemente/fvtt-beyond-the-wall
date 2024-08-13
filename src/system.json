@@ -51,6 +51,9 @@
 			"skill": {
 				"htmlFields": ["description"]
 			},
+			"spell": {
+				"htmlFields": ["description"]
+			},
 			"trait": {
 				"htmlFields": ["description"]
 			},

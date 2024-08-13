@@ -46,7 +46,7 @@
 		.tab.features.flexrow {
 			gap: 5px;
 		}
-		input {
+		input[type="number"] {
 			max-width: 32px;
 			text-align: center;
 		}
@@ -154,16 +154,13 @@
 					}
 				}
 			}
+			.class-abilities {
+				padding-left: 2px;
+			}
 		}
 		&.item {
 			min-height: 350px;
 			min-width: 400px;
-
-			.details-sidebar {
-				flex: 0 1 32%;
-				border-right: 1px solid var(--color-border-light-primary);
-				padding-right: 2px;
-			}
 
 			.perLevel {
 				flex: 0 0 auto;
@@ -175,6 +172,11 @@
 				height: 100%;
 				overflow: hidden;
 			}
+		}
+		.details-sidebar {
+			flex: 0 1 32%;
+			border-right: 1px solid var(--color-border-light-primary);
+			padding-right: 2px;
 		}
 	}
 }

@@ -27,6 +27,13 @@ export default class ActorSheetBTW extends ActorSheet {
 			config: CONFIG.BTW
 		};
 
+		const enrichmentOptions = {
+			async: true,
+			secrets: source.isOwner,
+			rollData: this.actor?.getRollData() ?? {},
+			relativeTo: this.actor
+		};
+
 		for (const [a, abl] of Object.entries(context.abilities)) {
 			abl.label = CONFIG.BTW.abilities[a]?.label;
 			abl.features = CONFIG.BTW.abilities[a]?.features.split(", ");
@@ -35,14 +42,13 @@ export default class ActorSheetBTW extends ActorSheet {
 			save.label = CONFIG.BTW.saves[s]?.label;
 		}
 
-		context.descriptionHTML = await TextEditor.enrichHTML(source.system.notes, {
-			secrets: source.isOwner,
-			async: true,
-			relativeTo: this.actor,
-			rollData: context.actor.getRollData()
-		});
+		context.descriptionHTML = await TextEditor.enrichHTML(source.system.notes, enrichmentOptions);
 
 		this._prepareItems(context);
+
+		if (context.class) {
+			context.abilitiesHTML = await TextEditor.enrichHTML(context.class.system.abilities, enrichmentOptions);
+		}
 
 		return context;
 	}
@@ -50,7 +56,9 @@ export default class ActorSheetBTW extends ActorSheet {
 	_prepareItems(context) {
 		context.skills = [];
 		this.actor.items.forEach((i) => {
-			if (i.type === "skill") {
+			if (i.type === "class") {
+				context.class = i;
+			} else if (i.type === "skill") {
 				i.abl = CONFIG.BTW.abilities[i.system.ability]?.abbreviation;
 				context.skills.push(i);
 			}

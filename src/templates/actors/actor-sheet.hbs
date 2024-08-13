@@ -3,7 +3,8 @@
 
 	<nav class="sheet-tabs tabs flexrow" data-group="primary">
 		<a class="item" data-tab="features">Features</a>
-		<a class="item" data-tab="items">Items</a>
+		<a class="item" data-tab="class">Class Features</a>
+		<a class="item" data-tab="items">Equipment</a>
 		<a class="item" data-tab="notes">Notes</a>
 		{{!-- <a class="item" data-tab="effects">Efeitos</a> --}}
 	</nav>
@@ -55,7 +56,7 @@
 					{{#if (eq actor.type "character")}}
 					<div class="flexcol">
 						<input type="number" name="system.fortunePoints.value" value="{{system.fortunePoints.value}}"
-							data-dtype="Number" min="0" max="{{system.fortunePoints.max}}" />
+							data-dtype="Number" min="0" />
 						<label>Fortune Points</label>
 					</div>
 					{{/if}}
@@ -89,6 +90,23 @@
 					</div>
 					{{/each}}
 				</div>
+			</div>
+		</div>
+
+		<div class="tab class flexrow" data-group="primary" data-tab="class">
+			<div class="details-sidebar">
+				<div class="form-group">
+					<label>Armor: {{class.system.armor}}</label>
+				</div>
+				<div class="form-group">
+					<label>Initiative Bonus: {{class.system.initiative}}</label>
+				</div>
+				<div class="form-group">
+					<label>Hit Dice: {{system.hd}}</label>
+				</div>
+			</div>
+			<div class="class-abilities">
+				{{editor abilitiesHTML editable=false }}
 			</div>
 		</div>
 

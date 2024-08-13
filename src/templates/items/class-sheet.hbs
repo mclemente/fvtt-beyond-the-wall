@@ -1,0 +1,42 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+	{{> "btw.item-header" }}
+
+	<nav class="sheet-tabs tabs flexrow" data-group="primary">
+		<a class="item" data-tab="description">Features</a>
+		<a class="item" data-tab="abilities">Class Abilities</a>
+	</nav>
+
+	<section class="sheet-body flexrow">
+		<div class="tab description flexrow" data-group="primary" data-tab="description">
+
+			<div class="details-sidebar">
+				<div class="form-group">
+					<label>Armor</label>
+					<div class="form-fields">
+						<input type="text" name="system.armor" value="{{system.armor}}" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label>Initiative Bonus</label>
+					<div class="form-fields">
+						<input type="number" name="system.initiative" value="{{system.initiative}}" data-dtype="Number" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label>Hit Dice</label>
+					<div class="form-fields">
+						<input type="text" name="system.hd" value="{{system.hd}}" placeholder="1d10" />
+					</div>
+				</div>
+			</div>
+			<div>
+				{{editor descriptionHTML target="system.notes" button=true editable=editable engine="prosemirror" collaborate=false}}
+			</div>
+
+		</div>
+
+		<div class="tab abilities" data-group="primary" data-tab="abilities">
+			{{editor abilitiesHTML target="system.abilities" button=true editable=editable engine="prosemirror" collaborate=false}}
+		</div>
+	</section>
+</form>

@@ -34,7 +34,7 @@ export default class ItemSheetBTW extends ItemSheet {
 		context.descriptionHTML = await TextEditor.enrichHTML(source.system.description, enrichmentOptions);
 
 		if (source.system.abilities) {
-			context.abilitiesHTML = await TextEditor.enrichHTML(source.system.description, enrichmentOptions);
+			context.abilitiesHTML = await TextEditor.enrichHTML(source.system.abilities, enrichmentOptions);
 		}
 
 		context.abilitiesLabels = Object.fromEntries(

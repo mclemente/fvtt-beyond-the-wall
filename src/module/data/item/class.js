@@ -1,5 +1,5 @@
 import FormulaField from "../fields/formula-field.js";
-import { ItemTemplateData } from "./templates/item.js";
+import ItemTemplateData from "./templates/item.js";
 
 export default class ClassData extends ItemTemplateData {
 	static defineSchema() {

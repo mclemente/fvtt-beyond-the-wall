@@ -1,4 +1,4 @@
-import { ItemTemplateData } from "./templates/item.js";
+import ItemTemplateData from "./templates/item.js";
 
 export default class SpellData extends ItemTemplateData {
 	static defineSchema() {

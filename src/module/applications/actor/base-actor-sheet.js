@@ -54,14 +54,21 @@ export default class ActorSheetBTW extends ActorSheet {
 	}
 
 	_prepareItems(context) {
+		context.itemList = {
+			equipment: [],
+			loot: [],
+			spell: [],
+			trait: [],
+			weapon: []
+		};
 		context.skills = [];
-		this.actor.items.forEach((i) => {
+		context.items.forEach((i) => {
 			if (i.type === "class") {
 				context.class = i;
 			} else if (i.type === "skill") {
 				i.abl = CONFIG.BTW.abilities[i.system.ability]?.abbreviation;
 				context.skills.push(i);
-			}
+			} else context.itemList[i.type].push(i);
 		});
 	}
 

@@ -60,6 +60,10 @@
 			min-height: 735px;
 			min-width: 600px;
 
+			ol.item-list {
+				list-style-type: none;
+			}
+
 			.portrait {
 				height: 200px;
 				width: 200px;
@@ -156,6 +160,25 @@
 			}
 			.class-abilities {
 				padding-left: 2px;
+			}
+			.item-row {
+				display: flex;
+				align-items: stretch;
+				.item-name {
+					flex: 1;
+					display: flex;
+					gap: .5rem;
+					align-items: center;
+					line-height: 1;
+					position: relative;
+					.item-image {
+						width: 32px;
+						height: 32px;
+						object-fit: cover;
+						min-width: 32px;
+						min-height: 32px;
+					}
+				}
 			}
 		}
 		&.item {

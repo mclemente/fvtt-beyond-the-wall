@@ -65,6 +65,13 @@
 			"Natural": "Natural Armor",
 			"Shield": "Shield"
 		},
+		"Item": {
+			"Equipment": "Equipments",
+			"Loot": "Loot",
+			"Spell": "Spells",
+			"Trait": "Traits",
+			"Weapon": "Weapons"
+		},
 		"DurationPermanent": "Permanent",
 		"DurationTime": "Time",
 		"Modifier": "Modifier",

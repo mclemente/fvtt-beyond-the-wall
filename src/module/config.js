@@ -60,6 +60,15 @@ BTW.armorTypes = {
 };
 preLocalize("armorTypes");
 
+BTW.itemTypes = {
+	equipment: "BTW.Item.Equipment",
+	loot: "BTW.Item.Loot",
+	spell: "BTW.Item.Spell",
+	trait: "BTW.Item.Trait",
+	weapon: "BTW.Item.Weapon"
+};
+preLocalize("itemTypes");
+
 BTW.saves = {
 	poison: {
 		label: "BTW.Save.Poison.Label"

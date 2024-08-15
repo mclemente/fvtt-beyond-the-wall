@@ -22,7 +22,7 @@ export default class ActorTemplateData extends foundry.abstract.TypeDataModel {
 			hd: new FormulaField({ initial: "0" }),
 			hp: new fields.SchemaField({
 				value: new fields.NumberField({ nullable: false, integer: true, min: 0, initial: 0 }),
-				max: new fields.NumberField({ nullable: true, integer: true, min: 0, initial: null })
+				max: new fields.NumberField({ nullable: true, integer: true, min: 0, initial: 0 })
 			}),
 			initiative: new fields.NumberField({ nullable: false, integer: true, initial: 0 }),
 			level: new fields.NumberField({ nullable: false, integer: true, min: 0, initial: 0 }),

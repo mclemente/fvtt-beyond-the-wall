@@ -10,7 +10,9 @@ export default class ItemSheetBTW extends ItemSheet {
 	}
 
 	get template() {
-		return `systems/beyond-the-wall/templates/items/${this.item.type}-sheet.hbs`;
+		const path = "systems/beyond-the-wall/templates/items";
+		if (["loot", "trait"].includes(this.item.type)) return `${path}/item-sheet.hbs`;
+		return `${path}/${this.item.type}-sheet.hbs`;
 	}
 
 	async getData() {

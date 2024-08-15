@@ -27,6 +27,7 @@ Hooks.once("init", function () {
 	CONFIG.Item.dataModels.loot = dataModels.ItemTemplate;
 	CONFIG.Item.dataModels.skill = dataModels.SkillData;
 	CONFIG.Item.dataModels.spell = dataModels.SpellData;
+	CONFIG.Item.dataModels.trait = dataModels.EquipmentData;
 
 	CONFIG.Actor.documentClass = documents.ActorBTW;
 

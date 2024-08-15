@@ -1,6 +1,6 @@
 import ItemTemplateData from "./templates/item.js";
 
-export default class ClassData extends ItemTemplateData {
+export default class EquipmentData extends ItemTemplateData {
 	static defineSchema() {
 		const { fields } = foundry.data;
 		const superFields = super.defineSchema();

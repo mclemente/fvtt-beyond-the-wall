@@ -39,13 +39,13 @@
 			}
 		},
 		"Item": {
-			"armor": {
-				"htmlFields": ["description"]
-			},
 			"class": {
 				"htmlFields": ["abilities", "description"]
 			},
 			"equipment": {
+				"htmlFields": ["description"]
+			},
+			"loot": {
 				"htmlFields": ["description"]
 			},
 			"skill": {

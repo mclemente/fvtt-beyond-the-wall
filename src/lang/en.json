@@ -5,9 +5,9 @@
 			"npc": "NPC"
 		},
 		"Item": {
-			"armor": "Armor",
 			"class": "Class",
 			"equipment": "Equipment",
+			"loot": "Loot",
 			"skill": "Skill",
 			"spell": "Spell",
 			"trait": "Trait",
@@ -57,6 +57,13 @@
 			"Neutral": {
 				"Label": "Neutral"
 			}
+		},
+		"Equipment": {
+			"Light": "Light Armor",
+			"Medium": "Medium Armor",
+			"Heavy": "Heavy Armor",
+			"Natural": "Natural Armor",
+			"Shield": "Shield"
 		},
 		"DurationPermanent": "Permanent",
 		"DurationTime": "Time",

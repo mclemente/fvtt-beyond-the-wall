@@ -51,6 +51,15 @@ BTW.alignments = {
 
 preLocalize("alignments", { keys: ["label"] });
 
+BTW.armorTypes = {
+	light: "BTW.Equipment.Light",
+	medium: "BTW.Equipment.Medium",
+	heavy: "BTW.Equipment.Heavy",
+	natural: "BTW.Equipment.Natural",
+	shield: "BTW.Equipment.Shield"
+};
+preLocalize("armorTypes");
+
 BTW.saves = {
 	poison: {
 		label: "BTW.Save.Poison.Label"

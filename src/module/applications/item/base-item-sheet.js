@@ -21,7 +21,7 @@ export default class ItemSheetBTW extends ItemSheet {
 			source: source.system,
 			system: foundry.utils.duplicate(this.item.system),
 
-			config: CONFIG.BTW,
+			config: CONFIG.BTW
 		};
 
 		const enrichmentOptions = {

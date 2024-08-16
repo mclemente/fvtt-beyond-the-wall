@@ -65,6 +65,7 @@
 			"Natural": "Natural Armor",
 			"Shield": "Shield"
 		},
+		"Equipped": "Equipped",
 		"Item": {
 			"Equipment": "Equipments",
 			"Loot": "Loot",
@@ -111,6 +112,7 @@
 		"TimeYear": "Year",
 		"TimeConcentration": "Concentration",
 		"TimePerm": "Permanent",
-		"TimeInst": "Instant"
+		"TimeInst": "Instant",
+		"Unequipped": "Unequipped"
 	}
 }

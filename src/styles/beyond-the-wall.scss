@@ -60,7 +60,7 @@
 			min-height: 735px;
 			min-width: 600px;
 
-			ol.item-list {
+			ol.unlist {
 				list-style-type: none;
 			}
 
@@ -177,6 +177,11 @@
 						object-fit: cover;
 						min-width: 32px;
 						min-height: 32px;
+					}
+				}
+				.item-detail {
+					.item-equip:not(.active) {
+						color: #999;
 					}
 				}
 			}

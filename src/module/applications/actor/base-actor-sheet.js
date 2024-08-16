@@ -5,8 +5,8 @@ export default class ActorSheetBTW extends ActorSheet {
 			width: 600,
 			height: 735,
 			scrollY: [".window-content"],
-			tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "moves" }]
-			// dragDrop: [{ dragSelector: ".items-list .item" }]
+			tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "moves" }],
+			dragDrop: [{ dragSelector: ".items-list .item" }]
 		});
 	}
 
@@ -76,6 +76,13 @@ export default class ActorSheetBTW extends ActorSheet {
 		super.activateListeners(html);
 
 		if (!this.isEditable) return;
+
+		html.find(".item-equip").on("click", (ev) => {
+			ev.preventDefault();
+			const li = ev.currentTarget.closest(".item");
+			const item = this.actor.items.get(li.dataset.itemId);
+			item.update({ "system.equipped": !item.system.equipped });
+		});
 
 		html.find(".item-create").on("click", (ev) => {
 			ev.preventDefault();

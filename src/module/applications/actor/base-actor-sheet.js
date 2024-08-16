@@ -54,6 +54,7 @@ export default class ActorSheetBTW extends ActorSheet {
 	}
 
 	_prepareItems(context) {
+		context.favorites = [];
 		context.itemList = {
 			equipment: [],
 			loot: [],
@@ -69,6 +70,7 @@ export default class ActorSheetBTW extends ActorSheet {
 				i.abl = CONFIG.BTW.abilities[i.system.ability]?.abbreviation;
 				context.skills.push(i);
 			} else context.itemList[i.type].push(i);
+			if (i.system.favorite) context.favorites.push(i);
 		});
 	}
 
@@ -76,6 +78,13 @@ export default class ActorSheetBTW extends ActorSheet {
 		super.activateListeners(html);
 
 		if (!this.isEditable) return;
+
+		html.find(".item-favorite").on("click", (ev) => {
+			ev.preventDefault();
+			const li = ev.currentTarget.closest(".item");
+			const item = this.actor.items.get(li.dataset.itemId);
+			item.update({ "system.favorite": !item.system.favorite });
+		});
 
 		html.find(".item-equip").on("click", (ev) => {
 			ev.preventDefault();

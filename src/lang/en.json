@@ -16,6 +16,8 @@
 	},
 	"BTW": {
 		"Ability": {
+			"Label": "Ability",
+			"LabelPl": "Abilities",
 			"Str": {
 				"Abbr": "Str",
 				"Label": "Strength",
@@ -47,6 +49,7 @@
 				"Features": "max # of allies"
 			}
 		},
+		"Alignment": "Alignment",
 		"Alignments": {
 			"Law": {
 				"Label": "Lawful"
@@ -58,6 +61,13 @@
 				"Label": "Neutral"
 			}
 		},
+		"Armor": "Armor",
+		"ArmorClass": "Armor Class",
+		"BaseAttackBonus": "Base Attack Bonus",
+		"Bonus": "Bonus",
+		"BonusToHit": "Bonus to Hit",
+		"Cantrip": "Cantrip",
+		"Damage": "Damage",
 		"Equipment": {
 			"Light": "Light Armor",
 			"Medium": "Medium Armor",
@@ -66,6 +76,7 @@
 			"Shield": "Shield"
 		},
 		"Equipped": "Equipped",
+		"Experience": "Experience",
 		"Item": {
 			"Equipment": "Equipments",
 			"Loot": "Loot",
@@ -73,11 +84,21 @@
 			"Trait": "Traits",
 			"Weapon": "Weapons"
 		},
+		"Duration": "Duration",
 		"DurationPermanent": "Permanent",
 		"DurationTime": "Time",
+		"FortunePoints": "Fortune Points",
+		"HitDice": "Hit Dice",
+		"HitPoints": "Hit Points",
+		"Initiative": "Initiative",
+		"InitiativeBonus": "Initiative Bonus",
 		"Modifier": "Modifier",
 		"None": "None",
+		"Penalty": "Penalty",
+		"Range": "Range",
 		"Save": {
+			"Label": "Save",
+			"LabelPl": "Saves",
 			"Poison": {
 				"Label": "Poison"
 			},
@@ -113,6 +134,8 @@
 		"TimeConcentration": "Concentration",
 		"TimePerm": "Permanent",
 		"TimeInst": "Instant",
+		"Type": "Type",
+		"Units": "Units",
 		"Unequipped": "Unequipped"
 	}
 }

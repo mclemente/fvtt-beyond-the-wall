@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label>Alignment</label>
+			<label>{{localize "BTW.Alignment"}}</label>
 			<div class="form-fields">
 				<select name="system.alignment">
 					{{selectOptions config.alignments selected=system.alignment }}
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div class="form-group experience">
-			<label>Experience</label>
+			<label>{{label "BTW.Experience"}}</label>
 			<div class="form-fields">
 				<input name="system.xp.value" type="number" value="{{system.xp.value}}" />
 				{{#if (eq actor.type "character")}}
@@ -30,11 +30,11 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label>Base Attack Bonus</label>
+			<label>{{localize "BTW.BaseAttackBonus"}}</label>
 			<input name="system.bab" type="number" value="{{system.bab}}" />
 		</div>
 		<div class="form-group">
-			<label>Initiative</label>
+			<label>{{localize "BTW.Initiative"}}</label>
 			<input name="system.initiative" type="number" value="{{system.initiative}}" />
 		</div>
 	</div>

@@ -51,13 +51,13 @@
 				<div class="right-fields flexrow">
 					<div class="armor flexcol">
 						<input type="number" name="system.ac" value="{{system.ac}}" placeholder="10" data-dtype="Number" />
-						<label>Armor Class</label>
+						<label>{{localize "BTW.ArmorClass"}}</label>
 					</div>
 					{{#if (eq actor.type "character")}}
 					<div class="flexcol">
 						<input type="number" name="system.fortunePoints.value" value="{{system.fortunePoints.value}}"
 							data-dtype="Number" min="0" />
-						<label>Fortune Points</label>
+						<label>{{localize "BTW.FortunePoints"}}</label>
 					</div>
 					{{/if}}
 					<div class="flexcol">
@@ -65,7 +65,7 @@
 							<input type="number" name="system.hp.value" value="{{system.hp.value}}" data-dtype="Number" />
 							<input type="number" name="system.hp.max" value="{{system.hp.max}}" data-dtype="Number" />
 						</div>
-						<label>Hit Points</label>
+						<label>{{localize "BTW.HitPoints"}}</label>
 					</div>
 				</div>
 				<hr>
@@ -105,13 +105,13 @@
 		<div class="tab class flexrow" data-group="primary" data-tab="class">
 			<div class="details-sidebar">
 				<div class="form-group">
-					<label>Armor: {{class.system.armor}}</label>
+					<label>{{localize "BTW.Armor"}}: {{class.system.armor}}</label>
 				</div>
 				<div class="form-group">
-					<label>Initiative Bonus: {{class.system.initiative}}</label>
+					<label>{{localize "BTW.InitiativeBonus"}}: {{class.system.initiative}}</label>
 				</div>
 				<div class="form-group">
-					<label>Hit Dice: {{class.system.hd}}</label>
+					<label>{{localize "BTW.HitDice"}}: {{class.system.hd}}</label>
 				</div>
 			</div>
 			<div class="class-abilities">

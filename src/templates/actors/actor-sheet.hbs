@@ -14,7 +14,7 @@
 			<div class="left-side">
 				<div class="abilities flexcol">
 					{{#each abilities as | ability id | }}
-					<div class="ability flexrow" data-ability="{{id}}" data-roll-under="true">
+					<div class="ability flexrow" data-ability="{{id}}">
 						<div class="ability-label flexcol">
 							<label class="abitily-name rollable">{{ability.label}}</label>
 							<input type="number" name="system.abilities.{{id}}.value" value="{{ability.value}}" min="1" class="ability-score" placeholder="10" data-dtype="Number">
@@ -35,8 +35,8 @@
 				<hr>
 				<div class="saves flexrow">
 					{{#each saves as | save id |}}
-					<div class="save flexcol">
-						<label>{{save.label}}</label>
+					<div class="save flexcol" data-save="{{id}}">
+						<label class="save-name rollable">{{save.label}}</label>
 						<div class="save-wrapper">
 							<input type="number" name="system.saves.{{id}}.value" value="{{save.value}}" placeholder="20" data-dtype="Number">
 						</div>

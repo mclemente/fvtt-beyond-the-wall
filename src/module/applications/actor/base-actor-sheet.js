@@ -92,6 +92,17 @@ export default class ActorSheetBTW extends ActorSheet {
 			});
 		});
 
+		html.find("[data-save] .rollable").on("click", async (ev) => {
+			const { save } = ev.target.closest(".save").dataset;
+			const s = this.actor.system.saves[save];
+			const roll = await new RollBTW("1d20", this.actor.getRollData(), { target: s.value }).evaluate();
+			roll.toMessage({
+				speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+				flavor: CONFIG.BTW.saves[save].label,
+				rollMode: game.settings.get("core", "rollMode")
+			});
+		});
+
 		html.find(".item-favorite").on("click", (ev) => {
 			ev.preventDefault();
 			const li = ev.currentTarget.closest(".item");

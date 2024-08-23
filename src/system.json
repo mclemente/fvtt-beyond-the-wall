@@ -62,6 +62,7 @@
 			}
 		}
 	},
+	"primaryTokenAttribute": "hp",
 	"initiative": "@initiative",
 	"url": "This is auto replaced",
 	"version": "This is auto replaced",

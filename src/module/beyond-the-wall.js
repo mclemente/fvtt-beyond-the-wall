@@ -1,5 +1,6 @@
 import * as applications from "./applications/_module.js";
 import * as dataModels from "./data/_module.js";
+import * as dice from "./dice/_module.js";
 import * as documents from "./documents/_module.js";
 import * as utils from "./utils.js";
 
@@ -10,6 +11,7 @@ import registerSettings from "./settings.js";
 globalThis.btw = {
 	// applications,
 	config: BTW,
+	dice,
 	dataModels,
 	documents,
 	utils
@@ -18,6 +20,8 @@ globalThis.btw = {
 Hooks.once("init", function () {
 	globalThis.btw = game.btw = Object.assign(game.system, globalThis.btw);
 	CONFIG.BTW = BTW;
+	CONFIG.Dice.RollBTW = dice.RollBTW;
+	CONFIG.Dice.rolls.push(dice.RollBTW);
 
 	CONFIG.Actor.dataModels.character = dataModels.CharacterData;
 	CONFIG.Actor.dataModels.npc = dataModels.NpcData;

@@ -103,6 +103,21 @@ export default class ActorSheetBTW extends ActorSheet {
 			});
 		});
 
+		html.find(".item-rollable").on("click", async (ev) => {
+			const { itemId } = ev.target.closest(".item").dataset;
+			const item = this.actor.items.get(itemId);
+			const { ability, bonus } = item.system;
+			if (!ability) return;
+			const abl = this.actor.system.abilities[ability];
+			const roll = await new RollBTW("1d20", this.actor.getRollData(), { target: abl.value + bonus, rollUnder: true }).evaluate();
+			const formattedBonus = bonus >= 0 ? `+${bonus}` : `-${bonus}`;
+			roll.toMessage({
+				speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+				flavor: `${item.name} (${CONFIG.BTW.abilities[ability].label} ${formattedBonus})`,
+				rollMode: game.settings.get("core", "rollMode")
+			});
+		});
+
 		html.find(".item-favorite").on("click", (ev) => {
 			ev.preventDefault();
 			const li = ev.currentTarget.closest(".item");

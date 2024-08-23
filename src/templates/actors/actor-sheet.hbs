@@ -14,12 +14,12 @@
 			<div class="left-side">
 				<div class="abilities flexcol">
 					{{#each abilities as | ability id | }}
-					<div class="flexrow">
-						<div class="ability flexcol">
-							<label>{{ability.label}}</label>
+					<div class="ability flexrow" data-ability="{{id}}" data-roll-under="true">
+						<div class="ability-label flexcol">
+							<label class="abitily-name rollable">{{ability.label}}</label>
 							<input type="number" name="system.abilities.{{id}}.value" value="{{ability.value}}" min="1" class="ability-score" placeholder="10" data-dtype="Number">
 						</div>
-						<div class="ability-modifiers flexrow">
+						<div class="ability-modifiers rollable flexrow">
 							<span class="ability-mod" data-tooltip="BTW.Modifier">
 								{{numberFormat ability.mod decimals=0 sign=true}}
 							</span>

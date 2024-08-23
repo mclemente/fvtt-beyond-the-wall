@@ -70,30 +70,32 @@
 			}
 			.left-side {
 				.abilities {
-					>div.flexrow {
-						gap: 2px;
-						align-items: center;
-					}
-					label,
-					.ability-score,
-					.ability-mod {
-						font-size: var(--font-size-20);
-					}
 					.ability {
-						&.flexcol {
+						&.flexrow {
+							gap: 2px;
 							align-items: center;
 						}
-						input.ability-score {
-							flex: 0 0 auto;
+						.abitily-name,
+						.ability-score,
+						.ability-mod {
+							font-size: var(--font-size-20);
 						}
-					}
-					.ability-modifiers {
-						flex: 0 0 auto;
+						.ability-label {
+							&.flexcol {
+								align-items: center;
+							}
+							input.ability-score {
+								flex: 0 0 auto;
+							}
+						}
+						.ability-modifiers {
+							flex: 0 0 auto;
 
-					}
-					.ability-features {
-						text-align: right;
-						align-self: center;
+						}
+						.ability-features {
+							text-align: right;
+							align-self: center;
+						}
 					}
 				}
 				.saves {

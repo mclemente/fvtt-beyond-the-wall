@@ -65,3 +65,5 @@ Hooks.once("init", function () {
 });
 
 Hooks.once("i18nInit", () => utils.performPreLocalization(CONFIG.BTW));
+
+Hooks.on("renderChatMessage", documents.chat.onRenderChatMessage);

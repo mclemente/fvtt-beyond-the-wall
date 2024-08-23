@@ -82,9 +82,9 @@ export default class ActorSheetBTW extends ActorSheet {
 		if (!this.isEditable) return;
 
 		html.find("[data-ability] .rollable").on("click", async (ev) => {
-			const { ability, rollUnder } = ev.target.closest(".ability").dataset;
+			const { ability } = ev.target.closest(".ability").dataset;
 			const abl = this.actor.system.abilities[ability];
-			const roll = await new RollBTW("1d20", this.actor.getRollData(), { target: abl.value, rollUnder }).evaluate();
+			const roll = await new RollBTW("1d20", this.actor.getRollData(), { target: abl.value, rollUnder: true }).evaluate();
 			roll.toMessage({
 				speaker: ChatMessage.getSpeaker({ actor: this.actor }),
 				flavor: CONFIG.BTW.abilities[ability].label,

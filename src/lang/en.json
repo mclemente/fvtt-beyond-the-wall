@@ -136,6 +136,10 @@
 		"TimeInst": "Instant",
 		"Type": "Type",
 		"Units": "Units",
-		"Unequipped": "Unequipped"
+		"Unequipped": "Unequipped",
+		"Weapon": {
+			"Melee": "Melee",
+			"Ranged": "Ranged"
+		}
 	}
 }

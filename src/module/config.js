@@ -130,4 +130,10 @@ BTW.specialTimePeriods = {
 };
 preLocalize("specialTimePeriods");
 
+BTW.weaponTypes = {
+	melee: "BTW.Weapon.Melee",
+	ranged: "BTW.Equipment.Ranged"
+};
+preLocalize("weaponTypes");
+
 export default BTW;

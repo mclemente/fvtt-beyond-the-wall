@@ -1,0 +1,23 @@
+<div class="btw chat-card item-card" data-actor-id="{{actor._id}}" data-item-id="{{item._id}}"
+     {{#if tokenId}}data-token-id="{{tokenId}}"{{/if}}>
+    <header class="card-header flexrow">
+        <img src="{{item.img}}" title="{{item.name}}" width="36" height="36"/>
+        <h3 class="item-name">{{item.name}}</h3>
+    </header>
+
+    <div class="card-content">
+        {{{description}}}
+    </div>
+
+    <div class="card-buttons">
+		{{#if (eq item.type "weapon")}}
+        <button type="button" data-action="attack">
+            {{ localize "BTW.Attack" }}
+        </button>
+
+		<button type="button" data-action="damage">
+            {{ localize "BTW.Damage" }}
+        </button>
+        {{/if}}
+    </div>
+</div>

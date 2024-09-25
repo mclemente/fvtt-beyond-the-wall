@@ -103,6 +103,13 @@ export default class ActorSheetBTW extends ActorSheet {
 			});
 		});
 
+		html.find("[data-action] .item-image").on("click", (ev) => {
+			ev.preventDefault();
+			const itemId = ev.currentTarget.closest(".item").dataset.itemId;
+			const item = this.actor.items.get(itemId);
+			return item.displayCard(ev);
+		});
+
 		html.find(".item-rollable").on("click", async (ev) => {
 			const { itemId } = ev.target.closest(".item").dataset;
 			const item = this.actor.items.get(itemId);

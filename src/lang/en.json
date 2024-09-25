@@ -63,6 +63,7 @@
 		},
 		"Armor": "Armor",
 		"ArmorClass": "Armor Class",
+		"Attack": "Attack",
 		"BaseAttackBonus": "Base Attack Bonus",
 		"Bonus": "Bonus",
 		"BonusToHit": "Bonus to Hit",

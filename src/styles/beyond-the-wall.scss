@@ -1,4 +1,7 @@
 .btw {
+	h3 {
+		border-bottom: none;
+	}
 	.sheet-header {
 		flex: 0 0 auto;
 		&.flexrow {
@@ -220,6 +223,27 @@
 			flex: 0 1 32%;
 			border-right: 1px solid var(--color-border-light-primary);
 			padding-right: 2px;
+		}
+	}
+
+	&.chat-card {
+		.card-header {
+			padding: 3px 0;
+			border-top: 2px groove #fff;
+			border-bottom: 2px groove #fff;
+			img {
+				flex: 0 0 36px;
+				margin-right: 5px;
+			}
+			h3 {
+				flex: 1;
+				margin: 0;
+				line-height: 36px;
+				font-family: "Modesto Condensed", "Palatino Linotype", serif;
+				font-size: 20px;
+				font-weight: 700;
+				color: #4b4a44;
+			}
 		}
 	}
 }

@@ -35,6 +35,7 @@ Hooks.once("init", function () {
 	CONFIG.Item.dataModels.weapon = dataModels.WeaponData;
 
 	CONFIG.Actor.documentClass = documents.ActorBTW;
+	CONFIG.Item.documentClass = documents.ItemBTW;
 
 	Actors.unregisterSheet("core", ActorSheet);
 	Actors.registerSheet("beyond-the-wall", applications.ActorSheetBTW, {
@@ -65,5 +66,9 @@ Hooks.once("init", function () {
 });
 
 Hooks.once("i18nInit", () => utils.performPreLocalization(CONFIG.BTW));
+
+Hooks.on("renderChatLog", (app, html, data) => {
+	documents.ItemBTW.chatListeners(html);
+});
 
 Hooks.on("renderChatMessage", documents.chat.onRenderChatMessage);

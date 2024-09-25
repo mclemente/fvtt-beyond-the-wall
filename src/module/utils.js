@@ -4,7 +4,9 @@ export const preloadTemplates = async function () {
 		"systems/beyond-the-wall/templates/actors/partials/actor-header.hbs",
 		"systems/beyond-the-wall/templates/actors/partials/actor-item-display.hbs",
 
-		"systems/beyond-the-wall/templates/items/partials/item-header.hbs"
+		"systems/beyond-the-wall/templates/items/partials/item-header.hbs",
+
+		"systems/beyond-the-wall/templates/chat/item-card.hbs"
 	];
 
 	const paths = {};
@@ -49,7 +51,7 @@ export function registerHandlebarsHelpers() {
 				} else return CONFIG.BTW.specialTimePeriods[units];
 			}
 			return str;
-		},
+		}
 	});
 }
 

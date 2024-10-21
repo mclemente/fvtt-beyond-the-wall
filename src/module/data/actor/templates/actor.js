@@ -25,7 +25,6 @@ export default class ActorTemplateData extends foundry.abstract.TypeDataModel {
 				max: new fields.NumberField({ nullable: true, integer: true, min: 0, initial: 0 })
 			}),
 			initiative: new fields.NumberField({ nullable: false, integer: true, initial: 0 }),
-			level: new fields.NumberField({ nullable: false, integer: true, min: 0, initial: 0 }),
 			notes: new fields.HTMLField(),
 			saves: new MappingField(new fields.SchemaField({
 				value: new fields.NumberField({

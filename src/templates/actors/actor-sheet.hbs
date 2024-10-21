@@ -3,7 +3,9 @@
 
 	<nav class="sheet-tabs tabs flexrow" data-group="primary">
 		<a class="item" data-tab="features">Features</a>
+		{{#if (eq actor.type "character")}}
 		<a class="item" data-tab="class">Class Features</a>
+		{{/if}}
 		<a class="item" data-tab="items">Equipment</a>
 		<a class="item" data-tab="notes">Notes</a>
 		{{!-- <a class="item" data-tab="effects">Efeitos</a> --}}
@@ -12,6 +14,7 @@
 	<section class="sheet-body flexrow">
 		<div class="tab features flexrow" data-group="primary" data-tab="features">
 			<div class="left-side">
+				{{#if (eq actor.type "character")}}
 				<div class="abilities flexcol">
 					{{#each abilities as | ability id | }}
 					<div class="ability flexrow" data-ability="{{id}}">
@@ -33,6 +36,7 @@
 					{{/each}}
 				</div>
 				<hr>
+				{{/if}}
 				<div class="saves flexrow">
 					{{#each saves as | save id |}}
 					<div class="save flexcol" data-save="{{id}}">

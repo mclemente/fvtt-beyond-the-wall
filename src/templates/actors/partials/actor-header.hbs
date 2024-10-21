@@ -4,6 +4,7 @@
 	</div>
 	<div class="header-fields">
 		<input name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
+		{{#if (eq actor.type "character")}}
 		<div class="class flexrow">
 			<div class="form-group class">
 				{{> detailItem item=class type="class"}}
@@ -12,6 +13,14 @@
 				<input name="system.level" type="number" value="{{system.level}}" />
 			</div>
 		</div>
+		{{else}}
+		<div class="form-group">
+			<label>{{localize "BTW.HitDice"}}</label>
+			<div class="form-fields">
+				<input name="system.hd" type="text" value="{{system.hd}}" />
+			</div>
+		</div>
+		{{/if}}
 		<div class="form-group">
 			<label>{{localize "BTW.Alignment"}}</label>
 			<div class="form-fields">

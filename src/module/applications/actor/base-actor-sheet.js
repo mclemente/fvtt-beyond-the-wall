@@ -44,7 +44,7 @@ export default class ActorSheetBTW extends ActorSheet {
 			save.label = CONFIG.BTW.saves[s]?.label;
 		}
 
-		context.descriptionHTML = await TextEditor.enrichHTML(source.system.description, enrichmentOptions);
+		context.descriptionHTML = await TextEditor.enrichHTML(source.system.notes, enrichmentOptions);
 
 		this._prepareItems(context);
 

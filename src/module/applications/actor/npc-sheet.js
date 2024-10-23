@@ -20,7 +20,7 @@ export default class NPCSheetBTW extends ActorSheetBTW {
 	 * @returns {Set<string>}
 	 */
 	get unsupportedItemTypes() {
-		return new Set(["skill", "traits"]);
+		return new Set(["class", "equipment", "loot", "skill", "spell", "traits"]);
 	}
 
 	async getData() {

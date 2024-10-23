@@ -96,10 +96,13 @@
 		"HitPoints": "Hit Points",
 		"Initiative": "Initiative",
 		"InitiativeBonus": "Initiative Bonus",
+		"Level": "Level",
 		"Modifier": "Modifier",
 		"None": "None",
 		"Penalty": "Penalty",
 		"Range": "Range",
+		"Ritual": "Ritual",
+		"LevelNRitual": "Level {n} Ritual",
 		"Save": {
 			"Label": "Save",
 			"LabelPl": "Saves",
@@ -128,6 +131,7 @@
 				"Label": "Will"
 			}
 		},
+		"Spell": "Spell",
 		"TimeTurn": "Turn",
 		"TimeRound": "Round",
 		"TimeMinute": "Minute",

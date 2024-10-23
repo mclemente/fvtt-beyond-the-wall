@@ -7,14 +7,15 @@ export default class SpellData extends ItemTemplateData {
 		return {
 			...superFields,
 			ability: new fields.StringField({ initial: "", blank: true }),
-			cantrip: new fields.BooleanField(),
 			duration: new fields.SchemaField({
 				value: new fields.NumberField({ required: true, nullable: false, integer: true, min: 0, initial: 0 }),
 				units: new fields.StringField({ initial: "inst" }),
 				level: new fields.BooleanField()
 			}),
+			level: new fields.NumberField({ nullable: false, integer: true, min: 1, max: 10, initial: 1 }),
 			range: new fields.StringField({ initial: "", blank: true, choices: CONFIG.BTW.ranges }),
-			save: new fields.BooleanField()
+			save: new fields.BooleanField(),
+			type: new fields.StringField({ initial: "spell", choices: CONFIG.BTW.spellTypes })
 		};
 	}
 }

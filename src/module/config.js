@@ -121,6 +121,14 @@ BTW.scalarTimePeriods = {
 
 preLocalize("scalarTimePeriods");
 
+BTW.spellTypes = {
+	cantrip: "BTW.Cantrip",
+	spell: "BTW.Spell",
+	ritual: "BTW.Ritual"
+};
+
+preLocalize("spellTypes");
+
 BTW.permanentTimePeriods = {
 	conc: "BTW.TimeConcentration",
 	perm: "BTW.TimePerm"

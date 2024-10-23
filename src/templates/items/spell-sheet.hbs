@@ -9,8 +9,12 @@
 	<section class="sheet-body flexrow">
 		<div class="tab description flexrow" data-group="primary" data-tab="description">
 			<div class="details-sidebar">
-				{{#if system.cantrip}}
-				<div>Cantrip</div>
+				{{#if (eq system.type "ritual") }}
+				<div>{{localize "BTW.LevelNRitual" n=system.level}}</div>
+				{{else}}
+				<div>{{lookup config.spellTypes system.type}}</div>
+				{{/if}}
+				{{#if (eq system.type "cantrip") }}
 				<div>Ability: {{lookup abilitiesLabels system.ability}}</div>
 				{{/if}}
 				{{#if system.range}}
@@ -30,12 +34,18 @@
 
 		<div class="tab details" data-group="primary" data-tab="details">
 			<div class="form-group">
-				<label>{{localize "BTW.Cantrip"}}</label>
+				<label>{{localize "BTW.Type"}}</label>
 				<div class="form-fields">
-					<input type="checkbox" name="system.cantrip" {{checked system.cantrip}} />
+					<select name="system.type">
+						{{selectOptions config.spellTypes selected=system.type }}
+					</select>
+					{{#if (eq system.type "ritual") }}
+					<label>{{localize "BTW.Level"}}</label>
+					<input type="number" name="system.level" value="{{source.level}}">
+					{{/if}}
 				</div>
 			</div>
-			{{#if system.cantrip}}
+			{{#if (eq system.type "cantrip") }}
 			<div class="form-group">
 				<label>{{localize "BTW.Ability.Label"}}</label>
 				<div class="form-fields">

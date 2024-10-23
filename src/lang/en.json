@@ -6,7 +6,7 @@
 		},
 		"Item": {
 			"class": "Class",
-			"equipment": "Equipment",
+			"equipment": "Armor",
 			"loot": "Loot",
 			"skill": "Skill",
 			"spell": "Spell",
@@ -79,7 +79,7 @@
 		"Equipped": "Equipped",
 		"Experience": "Experience",
 		"Item": {
-			"Equipment": "Equipments",
+			"Equipment": "Armor",
 			"Loot": "Loot",
 			"Spell": "Spells",
 			"Trait": "Traits",

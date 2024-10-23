@@ -240,7 +240,10 @@
 		.details-sidebar {
 			flex: 0 1 32%;
 			border-right: 1px solid var(--color-border-light-primary);
-			padding-right: 2px;
+			padding-right: 5px;
+			+ div {
+				padding-left: 5px;
+			}
 		}
 		.flexcol hr, .flexrow hr {
 			flex: 0;

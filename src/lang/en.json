@@ -59,6 +59,9 @@
 			},
 			"Neutral": {
 				"Label": "Neutral"
+			},
+			"Any": {
+				"Label": "Any"
 			}
 		},
 		"Armor": "Armor",

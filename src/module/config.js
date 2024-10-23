@@ -46,6 +46,9 @@ BTW.alignments = {
 	},
 	neutral: {
 		label: "BTW.Alignments.Neutral.Label"
+	},
+	any: {
+		label: "BTW.Alignments.Any.Label"
 	}
 };
 

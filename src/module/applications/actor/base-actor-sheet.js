@@ -3,17 +3,25 @@ import RollBTW from "../../dice/rolls.js";
 export default class ActorSheetBTW extends ActorSheet {
 	static get defaultOptions() {
 		return foundry.utils.mergeObject(super.defaultOptions, {
-			classes: ["btw", "sheet", "actor"],
+			classes: ["btw", "sheet", "actor", "character"],
 			width: 600,
 			height: 735,
 			scrollY: [".window-content"],
-			tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "moves" }],
+			tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }],
 			dragDrop: [{ dragSelector: ".items-list .item" }]
 		});
 	}
 
 	get template() {
 		return "systems/beyond-the-wall/templates/actors/actor-sheet.hbs";
+	}
+
+	/**
+	 * Blocklist of item types that shouldn't be added to the actor.
+	 * @returns {Set<string>}
+	 */
+	get unsupportedItemTypes() {
+		return new Set();
 	}
 
 	async getData() {
@@ -163,5 +171,12 @@ export default class ActorSheetBTW extends ActorSheet {
 			this.actor.deleteEmbeddedDocuments("Item", [li.dataset.itemId]);
 			this.render(false);
 		});
+	}
+
+	async _onDropItemCreate(itemData) {
+		const items = Array.isArray(itemData) ? itemData : [itemData];
+		const toCreate = items.filter((item) => !this.unsupportedItemTypes.has(item.type));
+		// Create the owned items as normal
+		return this.actor.createEmbeddedDocuments("Item", toCreate);
 	}
 }

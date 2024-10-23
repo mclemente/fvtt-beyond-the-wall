@@ -60,8 +60,13 @@
 
 	&.sheet {
 		&.actor {
-			min-height: 735px;
 			min-width: 600px;
+			&.character {
+				min-height: 735px;
+			}
+			&.npc {
+				min-height: 600px;
+			}
 
 			ol.unlist {
 				list-style-type: none;
@@ -74,65 +79,10 @@
 				width: 200px;
 			}
 			.left-side {
-				.abilities {
-					.ability {
-						&.flexrow {
-							gap: 2px;
-							align-items: center;
-						}
-						.abitily-name,
-						.ability-score,
-						.ability-mod {
-							font-size: var(--font-size-20);
-						}
-						.ability-label {
-							&.flexcol {
-								align-items: center;
-							}
-							input.ability-score {
-								flex: 0 0 auto;
-							}
-						}
-						.ability-modifiers {
-							flex: 0 0 auto;
-
-						}
-						.ability-features {
-							text-align: right;
-							align-self: center;
-						}
-					}
-				}
-				.saves {
-					height: 120px;
-					.save.flexcol {
-						text-align: center;
-						align-items: center;
-
-						.save-name {
-							flex: 0;
-							min-height: 34px;
-							align-content: center;
-						}
-
-						&:nth-child(odd) {
-							margin-bottom: auto;
-						}
-						&:nth-child(even) {
-							margin-top: auto;
-						}
-					}
-					.save-wrapper {
-						flex: 0 0 auto;
-						border: 1px solid var(--color-border-light-tertiary);
-						border-radius: 20px;
-						padding: 1px 0;
-						input {
-							border-radius: 20px;
-							height: 32px;
-						}
-					}
-				}
+				padding-right: 5px;
+			}
+			.right-side {
+				padding-left: 5px;
 			}
 			.spacer.flexrow {
 				flex: 0;
@@ -143,34 +93,98 @@
 					align-self: stretch;
 				}
 			}
-			.right-side {
-				.right-fields {
-					align-items: center;
-					margin: 3px 0;
-
-					label {
-						text-align: center;
-					}
-
-					input {
-						font-size: var(--font-size-20);
-					}
-
-					> div.flexcol {
+			.abilities {
+				.ability {
+					&.flexrow {
+						gap: 2px;
 						align-items: center;
 					}
+					.abitily-name,
+					.ability-score,
+					.ability-mod {
+						font-size: var(--font-size-20);
+					}
+					.ability-label {
+						&.flexcol {
+							align-items: center;
+						}
+						input.ability-score {
+							flex: 0 0 auto;
+						}
+					}
+					.ability-modifiers {
+						flex: 0 0 auto;
 
-					.armor input {
-						border-radius: 0 0 20px 20px;
+					}
+					.ability-features {
+						text-align: right;
+						align-self: center;
+					}
+				}
+			}
+			.saves {
+				height: 120px;
+				.save.flexcol {
+					text-align: center;
+					align-items: center;
+
+					.save-name {
+						flex: 0;
+						min-height: 34px;
+						align-content: center;
 					}
 
-					.hp {
-						gap: 3px;
+					&:nth-child(odd) {
+						margin-bottom: auto;
+					}
+					&:nth-child(even) {
+						margin-top: auto;
+					}
+				}
+				.save-wrapper {
+					flex: 0 0 auto;
+					border: 1px solid var(--color-border-light-tertiary);
+					border-radius: 20px;
+					padding: 1px 0;
+					input {
+						border-radius: 20px;
+						height: 32px;
+					}
+				}
+			}
+			.right-fields {
+				align-items: center;
+				margin: 3px 0;
+
+				label {
+					text-align: center;
+				}
+
+				input {
+					font-size: var(--font-size-20);
+				}
+
+				> div.flexcol {
+					align-items: center;
+				}
+
+				.armor input {
+					border-radius: 0 0 20px 20px;
+				}
+
+				.hp {
+					gap: 3px;
+					input {
+						max-width: 40px;
 					}
 				}
 			}
 			.class-abilities {
 				padding-left: 2px;
+			}
+			.item-controls {
+				flex: 0 0 auto;
+				margin: auto;
 			}
 			.item-row {
 				display: flex;
@@ -224,6 +238,9 @@
 			border-right: 1px solid var(--color-border-light-primary);
 			padding-right: 2px;
 		}
+		.flexcol hr, .flexrow hr {
+			flex: 0;
+		}
 	}
 
 	&.chat-card {
@@ -265,4 +282,39 @@
 	  &.fumble {
 		color: red;
 	  }
+}
+
+.sheet.journal-sheet.window-app.journal-entry-page .window-content,
+.sheet.journal-entry .journal-entry-content {
+	background: white;
+}
+
+.vtt {
+	.journal-sheet .window-content  {
+		h1,
+		h2,
+		h3,
+		h4 {
+			border: none;
+		}
+		table tr {
+			background-color: #dddbc4;
+
+			&:nth-child(2n) {
+				background-color: white;
+			}
+		}
+		.info-box {
+			color: #3f503a;
+			background: #dddbc4;
+			padding: 1px 5px;
+		}
+		.journal-icon {
+			background-color: black;
+			float: left;
+			width: 64px;
+			height: 64px;
+			margin-right: 5px;
+		}
+	}
 }

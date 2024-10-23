@@ -3,9 +3,7 @@
 
 	<nav class="sheet-tabs tabs flexrow" data-group="primary">
 		<a class="item" data-tab="features">Features</a>
-		{{#if (eq actor.type "character")}}
 		<a class="item" data-tab="class">Class Features</a>
-		{{/if}}
 		<a class="item" data-tab="items">Equipment</a>
 		<a class="item" data-tab="notes">Notes</a>
 		{{!-- <a class="item" data-tab="effects">Efeitos</a> --}}
@@ -14,7 +12,6 @@
 	<section class="sheet-body flexrow">
 		<div class="tab features flexrow" data-group="primary" data-tab="features">
 			<div class="left-side">
-				{{#if (eq actor.type "character")}}
 				<div class="abilities flexcol">
 					{{#each abilities as | ability id | }}
 					<div class="ability flexrow" data-ability="{{id}}">
@@ -36,7 +33,6 @@
 					{{/each}}
 				</div>
 				<hr>
-				{{/if}}
 				<div class="saves flexrow">
 					{{#each saves as | save id |}}
 					<div class="save flexcol" data-save="{{id}}">
@@ -57,13 +53,11 @@
 						<input type="number" name="system.ac" value="{{system.ac}}" placeholder="10" data-dtype="Number" />
 						<label>{{localize "BTW.ArmorClass"}}</label>
 					</div>
-					{{#if (eq actor.type "character")}}
 					<div class="flexcol">
 						<input type="number" name="system.fortunePoints.value" value="{{system.fortunePoints.value}}"
 							data-dtype="Number" min="0" />
 						<label>{{localize "BTW.FortunePoints"}}</label>
 					</div>
-					{{/if}}
 					<div class="flexcol">
 						<div class="hp flexrow">
 							<input type="number" name="system.hp.value" value="{{system.hp.value}}" data-dtype="Number" />
@@ -127,9 +121,11 @@
 			<section class="items-list inventory-list" data-item-list="inventory">
 			{{#each itemList as | data il |}}
 			<div class="items-section card" data-type="{{il}}">
-				<div class="items-header header">
+				<div class="items-header header flexrow">
 					<h3 class="item-name">{{lookup ../config.itemTypes il}}</h3>
-					<div class="item-header item-controls"></div>
+					<div class="item-header item-controls">
+						<a class="item-control item-create" data-type="{{il}}"><i class="fas fa-plus"></i></a>
+					</div>
 				</div>
 				<ol class="item-list unlist">
 				{{#each data as | item |}}

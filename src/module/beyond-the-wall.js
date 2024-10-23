@@ -39,6 +39,11 @@ Hooks.once("init", function () {
 
 	Actors.unregisterSheet("core", ActorSheet);
 	Actors.registerSheet("beyond-the-wall", applications.ActorSheetBTW, {
+		types: ["character"],
+		makeDefault: true
+	});
+	Actors.registerSheet("beyond-the-wall", applications.NPCSheetBTW, {
+		types: ["npc"],
 		makeDefault: true
 	});
 

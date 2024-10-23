@@ -8,6 +8,7 @@
 		</div>
 
 		<div class="item-detail item-controls">
+			{{#if (eq @root.actor.type "character")}}
 			<a class="item-control item-favorite">
 				{{#if item.system.favorite}}
 				<i class='fas fa-star'></i>
@@ -15,6 +16,7 @@
 				<i class='fas fa-star item-unequipped'></i>
 				{{/if}}
 			</a>
+			{{/if}}
 			{{#if (eq item.type (or "equipment" "weapon"))}}
 			<a class="item-control item-equip">
 				{{#if item.system.equipped}}

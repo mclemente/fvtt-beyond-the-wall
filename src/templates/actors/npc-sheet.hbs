@@ -1,0 +1,61 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+	{{> "btw.actor-header" }}
+
+	<hr>
+
+	<section class="sheet-body flexrow">
+		<div class="flexrow">
+			<div class="left-side">
+				<div class="saves flexrow">
+					{{#each saves as | save id |}}
+					<div class="save flexcol" data-save="{{id}}">
+						<label class="save-name rollable">{{save.label}}</label>
+						<div class="save-wrapper">
+							<input type="number" name="system.saves.{{id}}.value" value="{{save.value}}" placeholder="20" data-dtype="Number">
+						</div>
+					</div>
+					{{/each}}
+				</div>
+				<hr>
+				<div class="right-fields flexrow">
+					<div class="armor flexcol">
+						<input type="number" name="system.ac" value="{{system.ac}}" placeholder="10" data-dtype="Number" />
+						<label>{{localize "BTW.ArmorClass"}}</label>
+					</div>
+					<div class="flexcol">
+						<div class="hp flexrow">
+							<input type="number" name="system.hp.value" value="{{system.hp.value}}" data-dtype="Number" />
+							<input type="number" name="system.hp.max" value="{{system.hp.max}}" data-dtype="Number" />
+						</div>
+						<label>{{localize "BTW.HitPoints"}}</label>
+					</div>
+				</div>
+				<hr>
+				<section class="items-list inventory-list" data-item-list="inventory">
+					{{#each itemList as | data il |}}
+					<div class="items-section card" data-type="{{il}}">
+						<div class="items-header header flexrow">
+							<h3 class="item-name">Attacks</h3>
+							<div class="item-header item-controls">
+								<a class="item-control item-create" data-type="{{il}}"><i class="fas fa-plus"></i></a>
+							</div>
+						</div>
+						<ol class="item-list unlist">
+						{{#each data as | item |}}
+							{{> "btw.actor-item-display" item=item }}
+						{{/each}}
+						</ol>
+					</div>
+					{{/each}}
+				</section>
+			</div>
+
+			<div class="spacer flexrow"></div>
+
+			<div class="right-side">
+				{{editor descriptionHTML target="system.notes" button=true editable=editable
+					engine="prosemirror" collaborate=false}}
+			</div>
+		</div>
+	</section>
+</form>

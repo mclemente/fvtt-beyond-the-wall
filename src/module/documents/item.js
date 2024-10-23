@@ -1,4 +1,17 @@
 export default class ItemBTW extends Item {
+	static getDefaultArtwork(itemData) {
+		if (itemData.type === "spell") {
+			return { img: "systems/beyond-the-wall/assets/icons/svg/sparkles.svg" };
+		} else if (itemData.type === "equipment") {
+			return { img: "icons/svg/shield.svg" };
+		} else if (itemData.type === "skill") {
+			return { img: "icons/svg/skills.svg" };
+		} else if (itemData.type === "weapon") {
+			return { img: "icons/svg/sword.svg" };
+		}
+		return { img: this.DEFAULT_ICON };
+	}
+
 	getRollData({ deterministic=false }={}) {
 		let data = { ...(this.actor?.getRollData({ deterministic }) ?? {}), item: { ...this.system } };
 		if (data?.item) {

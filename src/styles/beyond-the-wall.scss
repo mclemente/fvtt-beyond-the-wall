@@ -55,6 +55,10 @@
 		}
 		.editor {
 			min-height: 200px;
+			&.prosemirror {
+				min-height: 400px;
+				min-height: -webkit-fill-available;
+			}
 		}
 	}
 

@@ -132,7 +132,7 @@ preLocalize("specialTimePeriods");
 
 BTW.weaponTypes = {
 	melee: "BTW.Weapon.Melee",
-	ranged: "BTW.Equipment.Ranged"
+	ranged: "BTW.Weapon.Ranged"
 };
 preLocalize("weaponTypes");
 

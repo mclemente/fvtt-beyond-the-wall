@@ -137,6 +137,7 @@
 		"TimeMinute": "Minute",
 		"TimeHour": "Hour",
 		"TimeDay": "Day",
+		"TimeWeek": "Week",
 		"TimeMonth": "Month",
 		"TimeYear": "Year",
 		"TimeConcentration": "Concentration",

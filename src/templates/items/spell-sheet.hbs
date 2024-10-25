@@ -9,14 +9,16 @@
 	<section class="sheet-body flexrow">
 		<div class="tab description flexrow" data-group="primary" data-tab="description">
 			<div class="details-sidebar">
-				{{#if (eq system.type "ritual") }}
-				<div>{{localize "BTW.LevelNRitual" n=system.level}}</div>
-				{{else}}
+				{{#if (eq system.type "cantrip") }}
+				<div>{{lookup config.spellTypes system.type}} ({{lookup abilitiesLabels system.ability}})</div>
+				{{/if}}
+				{{#if (eq system.type "spell")}}
 				<div>{{lookup config.spellTypes system.type}}</div>
 				{{/if}}
-				{{#if (eq system.type "cantrip") }}
-				<div>Ability: {{lookup abilitiesLabels system.ability}}</div>
+				{{#if (eq system.type "ritual") }}
+				<div>{{localize "BTW.LevelNRitual" n=system.level}} ({{lookup abilitiesLabels system.ability}})</div>
 				{{/if}}
+
 				{{#if system.range}}
 				<div>Range: {{lookup config.ranges system.range}}</div>
 				{{/if}}
@@ -45,7 +47,7 @@
 					{{/if}}
 				</div>
 			</div>
-			{{#if (eq system.type "cantrip") }}
+			{{#if (or (eq system.type "cantrip") (eq system.type "ritual")) }}
 			<div class="form-group">
 				<label>{{localize "BTW.Ability.Label"}}</label>
 				<div class="form-fields">
@@ -83,7 +85,7 @@
 							{{selectOptions config.specialTimePeriods}}
 						{{/select}}
 					</select>
-					{{#if system.duration.units}}
+					{{#if (lookup config.scalarTimePeriods system.duration.units)}}
 					<label class="perLevel">Per Level</label>
 					<input type="checkbox" name="system.duration.level" {{checked system.duration.level}} />
 					{{/if}}

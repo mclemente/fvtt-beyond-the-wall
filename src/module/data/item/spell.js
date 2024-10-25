@@ -15,7 +15,7 @@ export default class SpellData extends ItemTemplateData {
 			level: new fields.NumberField({ nullable: false, integer: true, min: 1, max: 10, initial: 1 }),
 			range: new fields.StringField({ initial: "", blank: true, choices: CONFIG.BTW.ranges }),
 			save: new fields.BooleanField(),
-			type: new fields.StringField({ initial: "spell", choices: CONFIG.BTW.spellTypes })
+			type: new fields.StringField({ initial: "ritual", choices: CONFIG.BTW.spellTypes })
 		};
 	}
 }

@@ -115,6 +115,7 @@ BTW.scalarTimePeriods = {
 	minute: "BTW.TimeMinute",
 	hour: "BTW.TimeHour",
 	day: "BTW.TimeDay",
+	week: "BTW.TimeWeek",
 	month: "BTW.TimeMonth",
 	year: "BTW.TimeYear"
 };

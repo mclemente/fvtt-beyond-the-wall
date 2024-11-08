@@ -67,11 +67,14 @@
     "Armor": "Armadura",
     "ArmorClass": "Classe de armadura",
     "Attack": "Ataque",
+    "Attacks": "Ataques",
     "BaseAttackBonus": "Bônus de Ataque Base",
     "Bonus": "Bônus",
     "BonusToHit": "Bônus de Acerto",
     "Cantrip": "Truque Mágico",
+    "ClassFeatures": "Habilidades de Classe",
     "Damage": "Dano",
+    "Details": "Detalhes",
     "Equipment": {
       "Light": "Armadura leve",
       "Medium": "Armadura média",
@@ -79,8 +82,10 @@
       "Natural": "Armadura natural",
       "Shield": "Escudo"
     },
+    "EquipmentLabel": "Itens",
     "Equipped": "Equipado",
     "Experience": "Experiência",
+    "Features": "Características",
     "Item": {
       "Equipment": "Armaduras",
       "Loot": "Itens",
@@ -99,10 +104,12 @@
     "Level": "Nível",
     "Modifier": "Modificador",
     "None": "Nenhum",
+    "Notes": "Notas",
     "Penalty": "Penalidade",
     "Range": "Alcance",
     "Ritual": "Ritual",
     "LevelNRitual": "Ritual de Nível {n}",
+    "QuickAccess": "Acesso Rápido",
     "Save": {
       "Label": "Salvamento",
       "LabelPl": "Salvamentos",
@@ -131,6 +138,7 @@
         "Label": "Vontade"
       }
     },
+    "Skills": "Perícias",
     "Spell": "Magia",
     "TimeTurn": "Turno",
     "TimeRound": "Rodada",

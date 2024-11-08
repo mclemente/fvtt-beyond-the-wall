@@ -1,41 +1,64 @@
 {
   "TYPES": {
     "Actor": {
-      "character": "Personagem"
+      "character": "Personagem",
+      "npc": "PdM"
     },
     "Item": {
+      "class": "Classe",
       "equipment": "Armadura",
+      "loot": "Item",
+      "skill": "Perícia",
+      "spell": "Magia",
+      "trait": "Habilidade",
       "weapon": "Arma"
     }
   },
   "BTW": {
     "Ability": {
+      "Label": "Atributo",
+      "LabelPl": "Atributos",
       "Str": {
-        "Label": "Força"
+        "Abbr": "For",
+        "Label": "Força",
+        "Features": "acerto corpo a corpo, dano corpo a corpo"
       },
       "Dex": {
-        "Label": "Destreza"
+        "Abbr": "Des",
+        "Label": "Destreza",
+        "Features": "acerto à distância, classe de armadura, iniciativa"
       },
       "Con": {
+        "Abbr": "Con",
         "Label": "Constituição",
         "Features": "pontos de vida por nível"
       },
       "Int": {
-        "Label": "Inteligência"
+        "Abbr": "Int",
+        "Label": "Inteligência",
+        "Features": "idiomas conhecidas"
       },
       "Wis": {
-        "Label": "Sabedoria"
+        "Abbr": "Sab",
+        "Label": "Sabedoria",
+        "Features": "salvamento contra controle da mente"
       },
       "Cha": {
-        "Label": "Carisma"
+        "Abbr": "Cha",
+        "Label": "Carisma",
+        "Features": "nº máximo de aliados"
       }
     },
+    "Alignment": "Tendência",
     "Alignments": {
       "Law": {
+        "Label": "Ordem"
       },
       "Chaos": {
+        "Label": "Caos"
       },
       "Neutral": {
+        "Label": "Neutralidade"
       },
       "Any": {
         "Label": "Qualquer"
@@ -46,37 +69,57 @@
     "Attack": "Ataque",
     "BaseAttackBonus": "Bônus de Ataque Base",
     "Bonus": "Bônus",
+    "BonusToHit": "Bônus de acerto",
+    "Cantrip": "Truque Mágico",
     "Damage": "Dano",
     "Equipment": {
       "Light": "Armadura leve",
       "Medium": "Armadura média",
+      "Heavy": "Armadura pesada",
+      "Natural": "Armadura natural",
       "Shield": "Escudo"
     },
     "Equipped": "Equipado",
     "Experience": "Experiência",
     "Item": {
+      "Equipment": "Armaduras",
+      "Loot": "Itens",
+      "Spell": "Magias",
+      "Trait": "Habilidades",
       "Weapon": "Armas"
     },
     "Duration": "Duração",
     "DurationPermanent": "Permanente",
     "DurationTime": "Tempo",
+    "FortunePoints": "Pontos da Sorte",
     "HitDice": "Dados de Vida",
+    "HitPoints": "Pontos de Vida",
     "Initiative": "Iniciativa",
     "InitiativeBonus": "Bônus de Iniciativa",
     "Level": "Nível",
     "Modifier": "Modificador",
     "None": "Nenhum",
+    "Penalty": "Penalidade",
+    "Range": "Alcance",
     "Ritual": "Ritual",
+    "LevelNRitual": "Ritual de Nível {n}",
     "Save": {
+      "Label": "Salvamento",
+      "LabelPl": "Salvamentos",
       "Poison": {
+        "Label": "Veneno"
       },
       "Breath": {
+        "Label": "Sopro"
       },
       "Polymorph": {
+        "Label": "Polimorfia"
       },
       "Spell": {
+        "Label": "Magia"
       },
       "MagicItem": {
+        "Label": "Item Mágico"
       },
       "Fortitude": {
         "Label": "Fortitude"
@@ -85,8 +128,12 @@
         "Label": "Reflexo"
       },
       "Will": {
+        "Label": "Vontade"
       }
     },
+    "Spell": "Magia",
+    "TimeTurn": "Turno",
+    "TimeRound": "Rodada",
     "TimeMinute": "Minuto",
     "TimeHour": "Hora",
     "TimeDay": "Dia",
@@ -95,6 +142,7 @@
     "TimeYear": "Ano",
     "TimeConcentration": "Concentração",
     "TimePerm": "Permanente",
+    "TimeInst": "Instantâneo",
     "Type": "Tipo",
     "Units": "Unidades",
     "Unequipped": "Não equipado",

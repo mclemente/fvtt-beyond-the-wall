@@ -2,10 +2,10 @@
 	{{> "btw.actor-header" }}
 
 	<nav class="sheet-tabs tabs flexrow" data-group="primary">
-		<a class="item" data-tab="features">Features</a>
-		<a class="item" data-tab="class">Class Features</a>
-		<a class="item" data-tab="items">Equipment</a>
-		<a class="item" data-tab="notes">Notes</a>
+		<a class="item" data-tab="features">{{localize "BTW.Features"}}</a>
+		<a class="item" data-tab="class">{{localize "BTW.ClassFeatures"}}</a>
+		<a class="item" data-tab="items">{{localize "BTW.EquipmentLabel"}}</a>
+		<a class="item" data-tab="notes">{{localize "BTW.Notes"}}</a>
 		{{!-- <a class="item" data-tab="effects">Efeitos</a> --}}
 	</nav>
 
@@ -69,7 +69,7 @@
 				<hr>
 				<div class="skills">
 					<div class="item-titles flexrow">
-						<div class="item-name">Skills</div>
+						<div class="item-name">{{localize "BTW.Skills"}}</div>
 						<div class="item-controls">
 							<a class="item-control item-create" data-type="skill"><i class="fa fa-plus"></i></a>
 						</div>
@@ -90,7 +90,7 @@
 				</div>
 				{{#if favorites.length}}
 				<hr>
-				<h3>Quick Access</h3>
+				<h3>{{localize "BTW.QuickAccess"}}</h3>
 				<ol class="item-list unlist">
 				{{#each favorites as | item |}}
 					{{> "btw.actor-item-display" item=item }}

@@ -67,11 +67,14 @@
 		"Armor": "Armor",
 		"ArmorClass": "Armor Class",
 		"Attack": "Attack",
+		"Attacks": "Attacks",
 		"BaseAttackBonus": "Base Attack Bonus",
 		"Bonus": "Bonus",
 		"BonusToHit": "Bonus to Hit",
 		"Cantrip": "Cantrip",
+		"ClassFeatures": "Class Features",
 		"Damage": "Damage",
+		"Details": "Details",
 		"Equipment": {
 			"Light": "Light Armor",
 			"Medium": "Medium Armor",
@@ -79,8 +82,10 @@
 			"Natural": "Natural Armor",
 			"Shield": "Shield"
 		},
+		"EquipmentLabel": "Equipment",
 		"Equipped": "Equipped",
 		"Experience": "Experience",
+		"Features": "Features",
 		"Item": {
 			"Equipment": "Armor",
 			"Loot": "Loot",
@@ -99,10 +104,12 @@
 		"Level": "Level",
 		"Modifier": "Modifier",
 		"None": "None",
+		"Notes": "Notes",
 		"Penalty": "Penalty",
 		"Range": "Range",
 		"Ritual": "Ritual",
 		"LevelNRitual": "Level {n} Ritual",
+		"QuickAccess": "Quick Access",
 		"Save": {
 			"Label": "Save",
 			"LabelPl": "Saves",
@@ -131,6 +138,7 @@
 				"Label": "Will"
 			}
 		},
+		"Skills": "Skills",
 		"Spell": "Spell",
 		"TimeTurn": "Turn",
 		"TimeRound": "Round",

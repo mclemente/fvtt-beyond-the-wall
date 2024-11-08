@@ -2,8 +2,8 @@
 	{{> "btw.item-header" }}
 
 	<nav class="sheet-tabs tabs flexrow" data-group="primary">
-		<a class="item" data-tab="description">Features</a>
-		<a class="item" data-tab="details">Details</a>
+		<a class="item" data-tab="description">{{localize "BTW.Features"}}</a>
+		<a class="item" data-tab="details">{{localize "BTW.Details"}}</a>
 	</nav>
 
 	<section class="sheet-body flexrow">
@@ -20,13 +20,13 @@
 				{{/if}}
 
 				{{#if system.range}}
-				<div>Range: {{lookup config.ranges system.range}}</div>
+				<div>{{localize "BTW.Range"}}: {{lookup config.ranges system.range}}</div>
 				{{/if}}
 				{{#if system.duration.units}}
-				<div>Duration: {{btw-formatDuration system.duration}}</div>
+				<div>{{localize "BTW.Duration"}}: {{btw-formatDuration system.duration}}</div>
 				{{/if}}
 				{{#if system.save}}
-				<div>Save</div>
+				<div>{{localize "BTW.Save.Label"}}</div>
 				{{/if}}
 			</div>
 			<div>

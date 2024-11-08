@@ -69,7 +69,7 @@
     "Attack": "Ataque",
     "BaseAttackBonus": "Bônus de Ataque Base",
     "Bonus": "Bônus",
-    "BonusToHit": "Bônus de acerto",
+    "BonusToHit": "Bônus de Acerto",
     "Cantrip": "Truque Mágico",
     "Damage": "Dano",
     "Equipment": {
@@ -91,7 +91,7 @@
     "Duration": "Duração",
     "DurationPermanent": "Permanente",
     "DurationTime": "Tempo",
-    "FortunePoints": "Pontos da Sorte",
+    "FortunePoints": "Pontos de Sorte",
     "HitDice": "Dados de Vida",
     "HitPoints": "Pontos de Vida",
     "Initiative": "Iniciativa",

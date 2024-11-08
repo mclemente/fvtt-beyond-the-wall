@@ -1,1 +1,106 @@
-{}
+{
+  "TYPES": {
+    "Actor": {
+      "character": "Personagem"
+    },
+    "Item": {
+      "equipment": "Armadura",
+      "weapon": "Arma"
+    }
+  },
+  "BTW": {
+    "Ability": {
+      "Str": {
+        "Label": "Força"
+      },
+      "Dex": {
+        "Label": "Destreza"
+      },
+      "Con": {
+        "Label": "Constituição",
+        "Features": "pontos de vida por nível"
+      },
+      "Int": {
+        "Label": "Inteligência"
+      },
+      "Wis": {
+        "Label": "Sabedoria"
+      },
+      "Cha": {
+        "Label": "Carisma"
+      }
+    },
+    "Alignments": {
+      "Law": {
+      },
+      "Chaos": {
+      },
+      "Neutral": {
+      },
+      "Any": {
+        "Label": "Qualquer"
+      }
+    },
+    "Armor": "Armadura",
+    "ArmorClass": "Classe de armadura",
+    "Attack": "Ataque",
+    "BaseAttackBonus": "Bônus de Ataque Base",
+    "Bonus": "Bônus",
+    "Damage": "Dano",
+    "Equipment": {
+      "Light": "Armadura leve",
+      "Medium": "Armadura média",
+      "Shield": "Escudo"
+    },
+    "Equipped": "Equipado",
+    "Experience": "Experiência",
+    "Item": {
+      "Weapon": "Armas"
+    },
+    "Duration": "Duração",
+    "DurationPermanent": "Permanente",
+    "DurationTime": "Tempo",
+    "HitDice": "Dados de Vida",
+    "Initiative": "Iniciativa",
+    "InitiativeBonus": "Bônus de Iniciativa",
+    "Level": "Nível",
+    "Modifier": "Modificador",
+    "None": "Nenhum",
+    "Ritual": "Ritual",
+    "Save": {
+      "Poison": {
+      },
+      "Breath": {
+      },
+      "Polymorph": {
+      },
+      "Spell": {
+      },
+      "MagicItem": {
+      },
+      "Fortitude": {
+        "Label": "Fortitude"
+      },
+      "Reflex": {
+        "Label": "Reflexo"
+      },
+      "Will": {
+      }
+    },
+    "TimeMinute": "Minuto",
+    "TimeHour": "Hora",
+    "TimeDay": "Dia",
+    "TimeWeek": "Semana",
+    "TimeMonth": "Mês",
+    "TimeYear": "Ano",
+    "TimeConcentration": "Concentração",
+    "TimePerm": "Permanente",
+    "Type": "Tipo",
+    "Units": "Unidades",
+    "Unequipped": "Não equipado",
+    "Weapon": {
+      "Melee": "Corpo a corpo",
+      "Ranged": "À distância"
+    }
+  }
+}

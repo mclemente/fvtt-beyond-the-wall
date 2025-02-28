@@ -116,8 +116,15 @@ export default class ItemBTW extends Item {
 	async rollAttack() {
 		// Get the parts and rollData for this item's attack
 		const { parts, rollData } = this.getAttackToHit();
+		let target;
+		if (this.system.bonus) parts.push("@item.bonus");
+		const targets = Array.from(game.user.targets);
+		if (targets.length) {
+			const { actor } = targets[0].document;
+			if (actor) target = actor.system.ac;
+		}
 
-		const roll = new CONFIG.Dice.RollBTW(["1d20"].concat(parts).join(" + "), rollData);
+		const roll = new CONFIG.Dice.RollBTW(["1d20"].concat(parts).join(" + "), rollData, { target });
 
 		if (roll === null) return null;
 

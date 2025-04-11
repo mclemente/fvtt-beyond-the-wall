@@ -20,7 +20,7 @@ export default class NPCSheetBTW extends ActorSheetBTW {
 	 * @returns {Set<string>}
 	 */
 	get unsupportedItemTypes() {
-		return new Set(["class", "equipment", "loot", "skill", "spell", "traits"]);
+		return new Set(["class", "equipment", "loot", "skill", "traits"]);
 	}
 
 	async getData() {
@@ -64,12 +64,12 @@ export default class NPCSheetBTW extends ActorSheetBTW {
 
 	_prepareItems(context) {
 		context.itemList = {
-			weapon: []
+			weapon: [],
+			spell: []
 		};
 		context.skills = [];
-		context.items.filter((i) => i.type === "weapon")
-			.forEach((i) => {
-				context.itemList[i.type].push(i);
-			});
+		context.items.forEach((i) => {
+			context.itemList[i.type].push(i);
+		});
 	}
 }

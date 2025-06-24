@@ -1,4 +1,4 @@
-export default class ItemSheetBTW extends ItemSheet {
+export default class ItemSheetBTW extends foundry.appv1.sheets.ItemSheet {
 	static get defaultOptions() {
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			classes: ["btw", "sheet", "item"],

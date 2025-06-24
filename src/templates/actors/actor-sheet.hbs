@@ -119,21 +119,21 @@
 
 		<div class="tab items" data-group="primary" data-tab="items">
 			<section class="items-list inventory-list" data-item-list="inventory">
-			{{#each itemList as | data il |}}
-			<div class="items-section card" data-type="{{il}}">
-				<div class="items-header header flexrow">
-					<h3 class="item-name">{{lookup ../config.itemTypes il}}</h3>
-					<div class="item-header item-controls">
-						<a class="item-control item-create" data-type="{{il}}"><i class="fas fa-plus"></i></a>
+				{{#each itemList as | data il |}}
+				<div class="items-section card" data-type="{{il}}">
+					<div class="items-header header flexrow">
+						<h3 class="item-name">{{lookup ../config.itemTypes il}}</h3>
+						<div class="item-header item-controls">
+							<a class="item-control item-create" data-type="{{il}}"><i class="fas fa-plus"></i></a>
+						</div>
 					</div>
+					<ol class="item-list unlist">
+					{{#each data as | item |}}
+						{{> "btw.actor-item-display" item=item }}
+					{{/each}}
+					</ol>
 				</div>
-				<ol class="item-list unlist">
-				{{#each data as | item |}}
-					{{> "btw.actor-item-display" item=item }}
 				{{/each}}
-				</ol>
-			</div>
-			{{/each}}
 			</section>
 		</div>
 

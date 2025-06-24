@@ -37,18 +37,18 @@ Hooks.once("init", function () {
 	CONFIG.Actor.documentClass = documents.ActorBTW;
 	CONFIG.Item.documentClass = documents.ItemBTW;
 
-	Actors.unregisterSheet("core", ActorSheet);
-	Actors.registerSheet("beyond-the-wall", applications.ActorSheetBTW, {
+	foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
+	foundry.documents.collections.Actors.registerSheet("beyond-the-wall", applications.ActorSheetBTW, {
 		types: ["character"],
 		makeDefault: true
 	});
-	Actors.registerSheet("beyond-the-wall", applications.NPCSheetBTW, {
+	foundry.documents.collections.Actors.registerSheet("beyond-the-wall", applications.NPCSheetBTW, {
 		types: ["npc"],
 		makeDefault: true
 	});
 
-	Items.unregisterSheet("core", ItemSheet);
-	Items.registerSheet("beyond-the-wall", applications.ItemSheetBTW, {
+	foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
+	foundry.documents.collections.Items.registerSheet("beyond-the-wall", applications.ItemSheetBTW, {
 		makeDefault: true
 	});
 
@@ -72,8 +72,33 @@ Hooks.once("init", function () {
 
 Hooks.once("i18nInit", () => utils.performPreLocalization(CONFIG.BTW));
 
-Hooks.on("renderChatLog", (app, html, data) => {
-	documents.ItemBTW.chatListeners(html);
-});
-
 Hooks.on("renderChatMessage", documents.chat.onRenderChatMessage);
+Hooks.on("renderChatMessageHTML", (_app, html) => {
+	html.querySelectorAll(".chat-card button[data-action]")
+		.forEach((button) => button.addEventListener("click", async (event) => {
+			event.preventDefault();
+
+			// Extract card data
+			const button = event.currentTarget;
+			button.disabled = true;
+			const card = button.closest(".chat-card");
+			const action = button.dataset.action;
+
+			const actor = await documents.ItemBTW._getChatCardActor(card);
+			if (!actor) return;
+
+			let item = actor.items.get(card.dataset.itemId);
+			if (!item) return null;
+
+			switch (action) {
+				case "attack":
+					await item.rollAttack({ event });
+					break;
+				case "damage":
+					await item.rollDamage({ event });
+					break;
+			}
+
+			button.disabled = false;
+		}));
+});

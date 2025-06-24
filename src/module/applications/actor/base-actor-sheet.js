@@ -1,6 +1,6 @@
 import RollBTW from "../../dice/rolls.js";
 
-export default class ActorSheetBTW extends ActorSheet {
+export default class ActorSheetBTW extends foundry.appv1.sheets.ActorSheet {
 	static get defaultOptions() {
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			classes: ["btw", "sheet", "actor", "character"],
@@ -66,11 +66,11 @@ export default class ActorSheetBTW extends ActorSheet {
 	_prepareItems(context) {
 		context.favorites = [];
 		context.itemList = {
+			weapon: [],
 			equipment: [],
 			loot: [],
 			spell: [],
-			trait: [],
-			weapon: []
+			trait: []
 		};
 		context.skills = [];
 		context.items.forEach((i) => {

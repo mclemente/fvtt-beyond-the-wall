@@ -17,7 +17,7 @@ export const preloadTemplates = async function () {
 	}
 
 	// Load the template parts
-	return loadTemplates(paths);
+	return foundry.applications.handlebars.loadTemplates(paths);
 };
 
 /* -------------------------------------------- */

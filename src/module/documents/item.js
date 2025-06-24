@@ -35,35 +35,6 @@ export default class ItemBTW extends Item {
 		return { rollData, parts };
 	}
 
-	static chatListeners(html) {
-		html.on("click", ".chat-card button[data-action]", async (event) => {
-			event.preventDefault();
-
-			// Extract card data
-			const button = event.currentTarget;
-			button.disabled = true;
-			const card = button.closest(".chat-card");
-			const action = button.dataset.action;
-
-			const actor = await this._getChatCardActor(card);
-			if (!actor) return;
-
-			let item = actor.items.get(card.dataset.itemId);
-			if (!item) return null;
-
-			switch (action) {
-				case "attack":
-					await item.rollAttack({ event });
-					break;
-				case "damage":
-					await item.rollDamage({ event });
-					break;
-			}
-
-			button.disabled = false;
-		});
-	}
-
 	static async _getChatCardActor(card) {
 
 		// Case 1 - a synthetic actor from a Token
@@ -92,7 +63,7 @@ export default class ItemBTW extends Item {
 			})
 		};
 
-		const html = await renderTemplate("systems/beyond-the-wall/templates/chat/item-card.hbs", templateData);
+		const html = await foundry.applications.handlebars.renderTemplate("systems/beyond-the-wall/templates/chat/item-card.hbs", templateData);
 
 		// Create the ChatMessage data object
 		const chatData = {

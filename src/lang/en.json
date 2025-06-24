@@ -73,6 +73,11 @@
 		"BonusToHit": "Bonus to Hit",
 		"Cantrip": "Cantrip",
 		"ClassFeatures": "Class Features",
+		"Currency": {
+			"Gold": "Gold",
+			"Silver": "Silver",
+			"Copper": "Copper"
+		},
 		"Damage": "Damage",
 		"Details": "Details",
 		"Equipment": {

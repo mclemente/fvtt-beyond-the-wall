@@ -119,6 +119,25 @@
 
 		<div class="tab items" data-group="primary" data-tab="items">
 			<section class="items-list inventory-list" data-item-list="inventory">
+				<div class="inventory-currency">
+					<ul class="currency flexrow">
+						<li class="currency-header">
+							<i class="fas fa-coins"></i>
+						</li>
+						<li class="currency-item">
+							<label>{{ localize 'BTW.Currency.Gold' }}</label>
+							<input type="number" data-dtype="Number" placeholder="0" name="system.dinheiro.gold" value="{{system.dinheiro.gold}}">
+						</li>
+						<li class="currency-item">
+							<label>{{ localize 'BTW.Currency.Silver' }}</label>
+							<input type="number" data-dtype="Number" placeholder="0" name="system.dinheiro.silver" value="{{system.dinheiro.silver}}">
+						</li>
+						<li class="currency-item">
+							<label>{{ localize 'BTW.Currency.Copper' }}</label>
+							<input type="number" data-dtype="Number" placeholder="0" name="system.dinheiro.tc" value="{{system.dinheiro.copper}}">
+						</li>
+					</ul>
+				</div>
 				{{#each itemList as | data il |}}
 				<div class="items-section card" data-type="{{il}}">
 					<div class="items-header header flexrow">

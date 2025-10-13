@@ -10,7 +10,7 @@
 		"lint:fix:errors": "eslint --quiet --ext .js,.cjs,.mjs --fix ."
 	},
 	"devDependencies": {
-		"@babel/eslint-parser": "^7.22.9",
+		"@babel/eslint-parser": "^7.28.4",
 		"@rollup/plugin-node-resolve": "^16.0.3",
 		"@rollup/stream": "^3.0.1",
 		"@stylistic/eslint-plugin-js": "^1.5.1",

@@ -17,7 +17,7 @@
 		"@typhonjs-fvtt/eslint-config-foundry.js": "^0.8.0",
 		"eslint": "^8.55.0",
 		"fs-extra": "^11.3.2",
-		"gulp": "^4.0.2",
+		"gulp": "^5.0.1",
 		"gulp-autoprefixer": "^10.0.0",
 		"gulp-dart-sass": "^1.1.0",
 		"gulp-sourcemaps": "^3.0.0",

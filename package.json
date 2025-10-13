@@ -18,7 +18,7 @@
 		"eslint": "^8.55.0",
 		"fs-extra": "^11.2.0",
 		"gulp": "^4.0.2",
-		"gulp-autoprefixer": "^9.0.0",
+		"gulp-autoprefixer": "^10.0.0",
 		"gulp-dart-sass": "^1.1.0",
 		"gulp-sourcemaps": "^3.0.0",
 		"rollup": "^2.79.1",

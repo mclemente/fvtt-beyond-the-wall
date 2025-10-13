@@ -1,0 +1,167 @@
+{
+	"TYPES": {
+		"Actor": {
+			"character": "Charakter",
+			"npc": "NSC"
+		},
+		"Item": {
+			"class": "Klasse",
+			"equipment": "Rüstung",
+			"loot": "Loot",
+			"skill": "Fertigkeit",
+			"spell": "Zauber",
+			"trait": "Eigenart",
+			"weapon": "Waffe"
+		}
+	},
+	"BTW": {
+		"Ability": {
+			"Label": "Fähigkeit",
+			"LabelPl": "Fähigkeiten",
+			"Str": {
+				"Abbr": "Str",
+				"Label": "Stärke",
+				"Features": "Nahkampf-Treffer, Nahkampfschaden"
+			},
+			"Dex": {
+				"Abbr": "Ges",
+				"Label": "Geschicklichkeit",
+				"Features": "Fernkampf-Treffer, Rüstungsklasse, Initiative"
+			},
+			"Con": {
+				"Abbr": "Kon",
+				"Label": "Konstitution",
+				"Features": "Trefferpunkte pro Stufe"
+			},
+			"Int": {
+				"Abbr": "Int",
+				"Label": "Intelligenz",
+				"Features": "vertraute Sprachen"
+			},
+			"Wis": {
+				"Abbr": "Wei",
+				"Label": "Weisheit",
+				"Features": "Rettungswurf gegen Gedankenkontrolle"
+			},
+			"Cha": {
+				"Abbr": "Cha",
+				"Label": "Charisma",
+				"Features": "Maximale Anzahl Verbündeter"
+			}
+		},
+		"Alignment": "Gesinnung",
+		"Alignments": {
+			"Law": {
+				"Label": "Rechtschaffend"
+			},
+			"Chaos": {
+				"Label": "Chaotisch"
+			},
+			"Neutral": {
+				"Label": "Neutral"
+			},
+			"Any": {
+				"Label": "Andere"
+			}
+		},
+		"Armor": "Rüstung",
+		"ArmorClass": "Rüstungsklasse",
+		"Attack": "Angriff",
+		"Attacks": "Angriffe",
+		"BaseAttackBonus": "Basis-Angriffs-Bonus",
+		"Bonus": "Bonus",
+		"BonusToHit": "Trefferbonus",
+		"Cantrip": "Zaubretrick",
+		"ClassFeatures": "Klassenfertigkeit",
+		"Currency": {
+			"Gold": "Gold",
+			"Silver": "Silber",
+			"Copper": "Kupfer"
+		},
+		"Damage": "Schaden",
+		"Details": "Details",
+		"Equipment": {
+			"Light": "leichte Rüstung",
+			"Medium": "mittlere Rüstung",
+			"Heavy": "schwere Rüstung",
+			"Natural": "natürliche Rüstung",
+			"Shield": "Schild"
+		},
+		"EquipmentLabel": "Ausrüstung",
+		"Equipped": "Ausgerüstet",
+		"Experience": "Erfahrung",
+		"Features": "Eigenschaften",
+		"Item": {
+			"Equipment": "Rüstung",
+			"Loot": "Loot",
+			"Spell": "Zaubersprüche",
+			"Trait": "Eigenarten",
+			"Weapon": "Waffen"
+		},
+		"Duration": "Dauer",
+		"DurationPermanent": "Permanent",
+		"DurationTime": "Zeit",
+		"FortunePoints": "Schicksalspunkte",
+		"HitDice": "Treffer Würfel",
+		"HitPoints": "Treffer Punkte",
+		"Initiative": "Initiative",
+		"InitiativeBonus": "Initiative Bonus",
+		"Level": "Stufe",
+		"Modifier": "Modifikator",
+		"None": "Nichts",
+		"Notes": "Notizen",
+		"Penalty": "Strafe",
+		"Range": "Reichweite",
+		"Ritual": "Ritual",
+		"LevelNRitual": "Ritual Stufe {n}",
+		"QuickAccess": "Schnellzugriff",
+		"Save": {
+			"Label": "Rettungswurf",
+			"LabelPl": "Rettungswürfe",
+			"Poison": {
+				"Label": "Gift"
+			},
+			"Breath": {
+				"Label": "Odem Waffe"
+			},
+			"Polymorph": {
+				"Label": "Verwandlung"
+			},
+			"Spell": {
+				"Label": "Zauber"
+			},
+			"MagicItem": {
+				"Label": "magi. Gegenstand"
+			},
+			"Fortitude": {
+				"Label": "Wiederstand"
+			},
+			"Reflex": {
+				"Label": "Reflex"
+			},
+			"Will": {
+				"Label": "Wille"
+			}
+		},
+		"Skills": "Skills",
+		"Spell": "Zauber",
+		"TimeTurn": "Zug",
+		"TimeRound": "Runde",
+		"TimeMinute": "Minute",
+		"TimeHour": "Stunde",
+		"TimeDay": "Tag",
+		"TimeWeek": "Woche",
+		"TimeMonth": "Monat",
+		"TimeYear": "Jahr",
+		"TimeConcentration": "Konzentration",
+		"TimePerm": "Permanent",
+		"TimeInst": "Spontan",
+		"Type": "Type",
+		"Units": "Einheiten",
+		"Unequipped": "Nicht ausgerüstet",
+		"Weapon": {
+			"Melee": "Nahkampf",
+			"Ranged": "Fernkampf"
+		}
+	}
+}

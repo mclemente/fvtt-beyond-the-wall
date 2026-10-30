@@ -48,7 +48,7 @@ function buildCode() {
  */
 function buildStyles() {
 	return gulp
-		.src([`${stylesDirectory}/**/*.${stylesExtension}`], { base: `${stylesDirectory}/src` })
+		.src([`${stylesDirectory}/**/*.${stylesExtension}`], { base: stylesDirectory })
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
 		.pipe(
@@ -57,7 +57,7 @@ function buildStyles() {
 			})
 		)
 		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest(`${distDirectory}/styles/dist`));
+		.pipe(gulp.dest(`${distDirectory}/styles`));
 }
 
 /**

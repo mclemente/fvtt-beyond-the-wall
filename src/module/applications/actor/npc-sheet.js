@@ -28,7 +28,7 @@ export default class NPCSheetBTW extends ActorSheetBTW {
 		const context = {
 			actor: this.actor,
 			source: source.system,
-			system: foundry.utils.duplicate(this.actor.system),
+			system: foundry.utils.deepClone(this.actor.system),
 			items: Array.from(this.actor.items.toObject()).sort((a, b) => (a.sort || 0) - (b.sort || 0)),
 			abilities: foundry.utils.deepClone(this.actor.system.abilities),
 			saves: foundry.utils.deepClone(this.actor.system.saves),

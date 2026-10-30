@@ -1,28 +1,11 @@
-// eslint-disable-next-line no-unused-vars
-export function highlightSuccessFailure(message, html, data) {
-	if (!message.isRoll || !message.isContentVisible || !message.rolls.length) return;
-
-	// Highlight rolls where the first part is a d20 roll
-	let rollResult = message.rolls.find((r) => {
-		return r instanceof CONFIG.Dice.RollBTW;
-	});
-	if (!rollResult) return;
-
-	// Highlight successes and failures
-	if (rollResult.options.target) {
-		if (rollResult.isSuccess) {
-			html.find(".dice-total").addClass("success");
-		} else {
-			html.find(".dice-total").addClass("failure");
-		}
-	}
-	if (rollResult.isCritical) {
-		html.find(".dice-total").addClass("critical");
-	} else if (rollResult.isFumble) {
-		html.find(".dice-total").addClass("fumble");
-	}
-}
-
-export function onRenderChatMessage(app, html, data) {
-	highlightSuccessFailure(app, html, data);
+/** Format system success/critical results on v13 and v14 chat HTML. */
+export function highlightSuccessFailure(message, html) {
+    if (!message.isRoll || !message.isContentVisible || !message.rolls?.length) return;
+    const roll = message.rolls.find((r) => r instanceof CONFIG.Dice.RollBTW);
+    if (!roll) return;
+    const total = html.querySelector(".dice-total");
+    if (!total) return;
+    if (Number.isFinite(roll.options.target)) total.classList.add(roll.isSuccess ? "success" : "failure");
+    if (roll.isCritical) total.classList.add("critical");
+    else if (roll.isFumble) total.classList.add("fumble");
 }

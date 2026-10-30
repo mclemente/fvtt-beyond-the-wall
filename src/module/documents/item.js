@@ -1,3 +1,4 @@
+import { applyMessageMode } from "../compatibility.js";
 export default class ItemBTW extends Item {
 	static getDefaultArtwork(itemData) {
 		if (itemData.type === "spell") {
@@ -76,7 +77,7 @@ export default class ItemBTW extends Item {
 		};
 
 		// Apply the roll mode to adjust message visibility
-		ChatMessage.applyRollMode(chatData, options.rollMode ?? game.settings.get("core", "rollMode"));
+		applyMessageMode(chatData, options.messageMode ?? options.rollMode);
 
 		// Create the Chat Message or return its data
 		const card = options.createMessage !== false ? await ChatMessage.create(chatData) : chatData;

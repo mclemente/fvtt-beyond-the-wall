@@ -1,4 +1,3 @@
-import { messageOptions } from "../../compatibility.js";
 import RollBTW from "../../dice/rolls.js";
 
 export default class ActorSheetBTW extends foundry.appv1.sheets.ActorSheet {
@@ -97,7 +96,7 @@ export default class ActorSheetBTW extends foundry.appv1.sheets.ActorSheet {
 			roll.toMessage({
 				speaker: ChatMessage.getSpeaker({ actor: this.actor }),
 				flavor: CONFIG.BTW.abilities[ability].label
-			}, messageOptions());
+			});
 		});
 
 		html.find("[data-save] .rollable").on("click", async (ev) => {
@@ -107,7 +106,7 @@ export default class ActorSheetBTW extends foundry.appv1.sheets.ActorSheet {
 			roll.toMessage({
 				speaker: ChatMessage.getSpeaker({ actor: this.actor }),
 				flavor: CONFIG.BTW.saves[save].label
-			}, messageOptions());
+			});
 		});
 
 		html.find("[data-action] .item-image").on("click", (ev) => {
@@ -128,7 +127,7 @@ export default class ActorSheetBTW extends foundry.appv1.sheets.ActorSheet {
 			roll.toMessage({
 				speaker: ChatMessage.getSpeaker({ actor: this.actor }),
 				flavor: `${item.name} (${CONFIG.BTW.abilities[ability].label} ${formattedBonus})`
-			}, messageOptions());
+			});
 		});
 
 		html.find(".item-favorite").on("click", (ev) => {

@@ -21,7 +21,7 @@ export default class ItemSheetBTW extends foundry.appv1.sheets.ItemSheet {
 			actor: this.actor,
 			item: this.item,
 			source: source.system,
-			system: foundry.utils.duplicate(this.item.system),
+			system: foundry.utils.deepClone(this.item.system),
 
 			config: CONFIG.BTW
 		};

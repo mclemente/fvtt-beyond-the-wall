@@ -29,7 +29,7 @@ export default class ActorSheetBTW extends foundry.appv1.sheets.ActorSheet {
 		const context = {
 			actor: this.actor,
 			source: source.system,
-			system: foundry.utils.duplicate(this.actor.system),
+			system: foundry.utils.deepClone(this.actor.system),
 			items: Array.from(this.actor.items.toObject()).sort((a, b) => (a.sort || 0) - (b.sort || 0)),
 			abilities: foundry.utils.deepClone(this.actor.system.abilities),
 			saves: foundry.utils.deepClone(this.actor.system.saves),
@@ -95,8 +95,7 @@ export default class ActorSheetBTW extends foundry.appv1.sheets.ActorSheet {
 			const roll = await new RollBTW("1d20", this.actor.getRollData(), { target: abl.value, rollUnder: true }).evaluate();
 			roll.toMessage({
 				speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-				flavor: CONFIG.BTW.abilities[ability].label,
-				rollMode: game.settings.get("core", "rollMode")
+				flavor: CONFIG.BTW.abilities[ability].label
 			});
 		});
 
@@ -106,8 +105,7 @@ export default class ActorSheetBTW extends foundry.appv1.sheets.ActorSheet {
 			const roll = await new RollBTW("1d20", this.actor.getRollData(), { target: s.value }).evaluate();
 			roll.toMessage({
 				speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-				flavor: CONFIG.BTW.saves[save].label,
-				rollMode: game.settings.get("core", "rollMode")
+				flavor: CONFIG.BTW.saves[save].label
 			});
 		});
 
@@ -128,8 +126,7 @@ export default class ActorSheetBTW extends foundry.appv1.sheets.ActorSheet {
 			const formattedBonus = bonus >= 0 ? `+${bonus}` : `-${bonus}`;
 			roll.toMessage({
 				speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-				flavor: `${item.name} (${CONFIG.BTW.abilities[ability].label} ${formattedBonus})`,
-				rollMode: game.settings.get("core", "rollMode")
+				flavor: `${item.name} (${CONFIG.BTW.abilities[ability].label} ${formattedBonus})`
 			});
 		});
 

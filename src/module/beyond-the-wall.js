@@ -37,18 +37,16 @@ Hooks.once("init", function () {
 	CONFIG.Actor.documentClass = documents.ActorBTW;
 	CONFIG.Item.documentClass = documents.ItemBTW;
 
-	foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
-	foundry.documents.collections.Actors.registerSheet("beyond-the-wall", applications.ActorSheetBTW, {
+	const { Actors, Items } = foundry.documents.collections;
+	Actors.registerSheet("beyond-the-wall", applications.ActorSheetBTW, {
 		types: ["character"],
 		makeDefault: true
 	});
-	foundry.documents.collections.Actors.registerSheet("beyond-the-wall", applications.NPCSheetBTW, {
+	Actors.registerSheet("beyond-the-wall", applications.NPCSheetBTW, {
 		types: ["npc"],
 		makeDefault: true
 	});
-
-	foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
-	foundry.documents.collections.Items.registerSheet("beyond-the-wall", applications.ItemSheetBTW, {
+	Items.registerSheet("beyond-the-wall", applications.ItemSheetBTW, {
 		makeDefault: true
 	});
 
@@ -72,8 +70,8 @@ Hooks.once("init", function () {
 
 Hooks.once("i18nInit", () => utils.performPreLocalization(CONFIG.BTW));
 
-Hooks.on("renderChatMessage", documents.chat.onRenderChatMessage);
-Hooks.on("renderChatMessageHTML", (_app, html) => {
+Hooks.on("renderChatMessageHTML", (message, html) => {
+	documents.chat.highlightSuccessFailure(message, html);
 	html.querySelectorAll(".chat-card button[data-action]")
 		.forEach((button) => button.addEventListener("click", async (event) => {
 			event.preventDefault();
@@ -85,20 +83,26 @@ Hooks.on("renderChatMessageHTML", (_app, html) => {
 			const action = button.dataset.action;
 
 			const actor = await documents.ItemBTW._getChatCardActor(card);
-			if (!actor) return;
-
-			let item = actor.items.get(card.dataset.itemId);
-			if (!item) return null;
-
-			switch (action) {
-				case "attack":
-					await item.rollAttack({ event });
-					break;
-				case "damage":
-					await item.rollDamage({ event });
-					break;
+			if (!actor) {
+				button.disabled = false; return;
 			}
 
-			button.disabled = false;
+			let item = actor.items.get(card.dataset.itemId);
+			if (!item) {
+				button.disabled = false; return;
+			}
+
+			try {
+				switch (action) {
+					case "attack":
+						await item.rollAttack({ event });
+						break;
+					case "damage":
+						await item.rollDamage({ event });
+						break;
+				}
+			} finally {
+				button.disabled = false;
+			}
 		}));
 });

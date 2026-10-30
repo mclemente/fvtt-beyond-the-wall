@@ -8,8 +8,12 @@
 			"discord": "mclemente"
 		}
 	],
-	"esmodules": ["module/beyond-the-wall.js"],
-	"styles": ["styles/beyond-the-wall.css"],
+	"esmodules": [
+		"module/beyond-the-wall.js"
+	],
+	"styles": [
+		"styles/beyond-the-wall.css"
+	],
 	"languages": [
 		{
 			"lang": "en",
@@ -25,9 +29,9 @@
 		}
 	],
 	"compatibility": {
-		"minimum": 13,
-		"verified": 13,
-		"maximum": 13
+		"minimum": 14,
+		"verified": 14,
+		"maximum": 14
 	},
 	"grid": {
 		"distance": 1,
@@ -36,33 +40,52 @@
 	"documentTypes": {
 		"Actor": {
 			"character": {
-				"htmlFields": ["notes"]
+				"htmlFields": [
+					"notes"
+				]
 			},
 			"npc": {
-				"htmlFields": ["notes"]
+				"htmlFields": [
+					"notes"
+				]
 			}
 		},
 		"Item": {
 			"class": {
-				"htmlFields": ["abilities", "description"]
+				"htmlFields": [
+					"abilities",
+					"description"
+				]
 			},
 			"equipment": {
-				"htmlFields": ["description"]
+				"htmlFields": [
+					"description"
+				]
 			},
 			"loot": {
-				"htmlFields": ["description"]
+				"htmlFields": [
+					"description"
+				]
 			},
 			"skill": {
-				"htmlFields": ["description"]
+				"htmlFields": [
+					"description"
+				]
 			},
 			"spell": {
-				"htmlFields": ["description"]
+				"htmlFields": [
+					"description"
+				]
 			},
 			"trait": {
-				"htmlFields": ["description"]
+				"htmlFields": [
+					"description"
+				]
 			},
 			"weapon": {
-				"htmlFields": ["description"]
+				"htmlFields": [
+					"description"
+				]
 			}
 		}
 	},
@@ -73,4 +96,3 @@
 	"manifest": "This is auto replaced",
 	"download": "This is auto replaced"
 }
-

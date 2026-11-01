@@ -1,4 +1,3 @@
-import { applyMessageMode } from "../compatibility.js";
 export default class ItemBTW extends Item {
 	static getDefaultArtwork(itemData) {
 		if (itemData.type === "spell") {
@@ -13,7 +12,7 @@ export default class ItemBTW extends Item {
 		return { img: this.DEFAULT_ICON };
 	}
 
-	getRollData({ deterministic=false }={}) {
+	getRollData({ deterministic = false } = {}) {
 		let data = { ...(this.actor?.getRollData({ deterministic }) ?? {}), item: { ...this.system } };
 		if (data?.item) {
 			data.item.flags = { ...this.flags };
@@ -77,7 +76,7 @@ export default class ItemBTW extends Item {
 		};
 
 		// Apply the roll mode to adjust message visibility
-		applyMessageMode(chatData, options.messageMode ?? options.rollMode);
+		ChatMessage.applyMode(chatData, options.messageMode);
 
 		// Create the Chat Message or return its data
 		const card = options.createMessage !== false ? await ChatMessage.create(chatData) : chatData;
@@ -107,7 +106,7 @@ export default class ItemBTW extends Item {
 		return roll;
 	}
 
-	async rollDamage({ critical, event=null, options={} }={}) {
+	async rollDamage({ critical, event = null, options = {} } = {}) {
 		// Get roll data
 		const rollData = this.getRollData();
 

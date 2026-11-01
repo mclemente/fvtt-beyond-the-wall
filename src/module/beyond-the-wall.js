@@ -1,4 +1,3 @@
-import * as compatibility from "./compatibility.js";
 import * as applications from "./applications/_module.js";
 import * as dataModels from "./data/_module.js";
 import * as dice from "./dice/_module.js";
@@ -38,7 +37,18 @@ Hooks.once("init", function () {
 	CONFIG.Actor.documentClass = documents.ActorBTW;
 	CONFIG.Item.documentClass = documents.ItemBTW;
 
-	compatibility.registerSheets(applications);
+	const { Actors, Items } = foundry.documents.collections;
+	Actors.registerSheet("beyond-the-wall", applications.ActorSheetBTW, {
+		types: ["character"],
+		makeDefault: true
+	});
+	Actors.registerSheet("beyond-the-wall", applications.NPCSheetBTW, {
+		types: ["npc"],
+		makeDefault: true
+	});
+	Items.registerSheet("beyond-the-wall", applications.ItemSheetBTW, {
+		makeDefault: true
+	});
 
 	registerSettings();
 
@@ -73,22 +83,26 @@ Hooks.on("renderChatMessageHTML", (message, html) => {
 			const action = button.dataset.action;
 
 			const actor = await documents.ItemBTW._getChatCardActor(card);
-			if (!actor) { button.disabled = false; return; }
+			if (!actor) {
+				button.disabled = false; return;
+			}
 
 			let item = actor.items.get(card.dataset.itemId);
-			if (!item) { button.disabled = false; return; }
-
-            try {
-			switch (action) {
-				case "attack":
-					await item.rollAttack({ event });
-					break;
-				case "damage":
-					await item.rollDamage({ event });
-					break;
+			if (!item) {
+				button.disabled = false; return;
 			}
-            } finally {
-			button.disabled = false;
-            }
+
+			try {
+				switch (action) {
+					case "attack":
+						await item.rollAttack({ event });
+						break;
+					case "damage":
+						await item.rollDamage({ event });
+						break;
+				}
+			} finally {
+				button.disabled = false;
+			}
 		}));
 });

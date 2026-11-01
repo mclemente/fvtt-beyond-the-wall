@@ -68,7 +68,7 @@ export default class ItemBTW extends Item {
 		// Create the ChatMessage data object
 		const chatData = {
 			user: game.user.id,
-			type: CONST.CHAT_MESSAGE_STYLES.OTHER,
+			style: CONST.CHAT_MESSAGE_STYLES.OTHER,
 			content: html,
 			flavor: this.system.chatFlavor || this.name,
 			speaker: ChatMessage.getSpeaker({ actor: this.actor, token }),
